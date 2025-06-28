@@ -3,9 +3,12 @@ import { FaEarthAmericas } from "react-icons/fa6";
 import { motion, AnimatePresence } from 'framer-motion';
 import ajay from "../assets/ajay-kumar-removebg-preview.png";
 import shiva from "../assets/shiva3.png";
+import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
+
   const [portfolioMode, setPortfolioMode] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -96,7 +99,7 @@ const Landing = () => {
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 className='w-60 h-60 bg-white text-black rounded-full flex flex-col justify-center items-center cursor-pointer'
-                onClick={() => alert("Shiva's portfolio")}
+                onClick={() => navigate("/shiva/portfolio")}
               >
                 <img src={shiva} className='w-28 h-28 rounded-full object-cover mb-2' />
                 <p className='font-semibold'>Shiva</p>
