@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import ajay from "../assets/ajay-kumar-removebg-preview.png";
 import shiva from "../assets/shiva3.png";
-import { motion } from 'framer-motion';
+import { motion, useInView, useAnimation } from 'framer-motion';
 
 const Shiva = () => {
+
+    const aboutRef = useRef(null);
+    const isInView = useInView(aboutRef, { margin: "-100px"});
+    const controls = useAnimation();
+
+    useEffect(() => {
+        if (isInView) {
+            controls.start({ opacity: 1, y: 0}); 
+        } else {
+            controls.start({ opacity: 0, y: 100}) // reset when out of view
+        }
+    }, [isInView, controls])
+
   return (
     <>
     <div className='w-screen h-screen bg-black flex justify-center items-center'>
@@ -84,16 +97,71 @@ const Shiva = () => {
     </div>
 
     {/* about me */}
-    <div className='w-screen h-screen bg-black flex justify-center items-center'>
+    <motion.div 
+        className='w-screen h-screen bg-black flex justify-center items-center'
+        ref={aboutRef}
+        initial={{ opacity: 0, y: 100 }}
+        animate={controls}
+        transition={{ duration: 1, ease: "easeInOut" }}
+    >
         <div className='w-full h-150 flex flex-row justify-between items-center'>
-            <div className='w-180 h-150 border-2 border-white flex flex-col justsify-center items-center'>
 
-            </div>
-            <div className='w-180 h-150 border-2 border-white'>
+          {/* Left Section */}
+          <div className='w-150 h-150 flex justify-center items-center relative'>
 
-            </div>
+            {/* Overlapping Circles with Image in Between */}
+          <div 
+            className='w-100 h-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
+            >
+
+            {/* White Background (Bottom) */}
+            <div className='w-full h-full rounded-tl-full bg-white absolute top-0 left-0 z-0'></div>
+
+            {/* Gray Background (Top Layer) */}
+            <div className='w-full h-full rounded-tr-full bg-gray-400 absolute top-0 left-0 z-10'></div>
+
+            {/* Image (Middle Layer) */}
+            <img 
+              src={shiva}
+              alt='shiva'
+              className='w-full h-full object-contain absolute shadow-black top-0 left-0 z-20 drop-shadow-2xl'
+            />
+        </div>
+        <div className='w-110 h-50 mt-120 rounded-full bg-black z-30 flex justify-center items-center text-white text-4xl font-extrabold'>
+            <p className='pb-20'></p>
         </div>
     </div>
+
+    {/* Right Section */}
+    <div className='w-180 h-150 mr-25 flex flex-row justify-center items-center'>
+        <div className='w-40 h-150 pl-30 flex flex-col justify-center items-center'>
+            <div className='w-4 h-4 bg-purple-900 rounded-full'></div>
+            <div className='h-40 border border-purple-500'></div>
+            <div className='w-4 h-4 bg-pink-600 rounded-full'></div>
+            <div className='h-30 border border-red-500'></div>
+            <div className='w-4 h-4 bg-red-900 rounded-full'></div>
+        </div>
+        <div className='w-140 h-150 flex flex-col justify-center items-center'>
+            <p className='text-md text-white font-extralight mr-17'><span className='text-xl font-extrabold text-gray-400'>Role:</span> Full-Stack Developer (Project-Based)</p>
+            <p className='text-md text-white font-extralight'><span className='text-xl font-extrabold text-gray-400'>Status:</span> BCA Student | Content Creator on YouTube</p>
+            <p className='text-md text-white ml-10 font-extralight'><span className='text-xl font-extrabold text-gray-400'>Tools:</span> React, Tailwind CSS, Redux Toolkit, Supabase, Go</p>
+            <p className='text-xl text-white mt-8 mr-75'>Highlight:</p>
+            <p className='text-md text-white ml-25 mt-3'>Built complete apps with authentication, filters, pagination, and responsive UI</p>
+            <p className='text-md text-white ml-25'>Worked with external APIs like TMDB and Spotify for real-time data</p>
+            <p className='text-md text-white ml-25'>Created and deployed full-stack projects to showcase practical learning</p>
+            <p className='text-md text-white ml-25'>Collaborated closely with mentor to follow real-world development practices</p>
+            <p className='text-md text-white ml-25'>Sharing my learning journey and tech content on YouTube to help other developers</p>
+        </div>
+    </div>
+  </div>
+            
+            
+</motion.div>
+
+<div className='w-full h-screen bg-pink-500'>
+
+            </div>
+
     </>
   )
 }
