@@ -3,6 +3,7 @@ import ajay from "../assets/ajay-kumar-removebg-preview.png";
 import shiva from "../assets/shiva3.png";
 import movie from "../assets/movie.jpg";
 import video from "../assets/video.mp4";
+import 
 import { motion, useInView, useAnimation } from 'framer-motion';
 
 const Shiva = () => {
@@ -40,8 +41,8 @@ const Shiva = () => {
 
     const projects = [
         {
-            tag: "Movie",
-            name: "Movie Recommendation App",
+            tag: "Social",
+            name: "Spotlight Labs",
             description: "A modern movie recommendation web app built with React, TailwindCSS, Redux Toolkit, and RTK Query. It integrates Supabase for OAuth-based authentication (Google & GitHub) and fetches real-time movie data using the TMDB API. Users can explore trending movies, filter by genre, language, release year, and ratings, and enjoy a smooth, responsive UI with dark/light mode support.",
             video: video,
             link: "https://moviere.netlify.app/"
@@ -52,6 +53,11 @@ const Shiva = () => {
             description: "A modern movie recommendation web app built with React, TailwindCSS, Redux Toolkit, and RTK Query. It integrates Supabase for OAuth-based authentication (Google & GitHub) and fetches real-time movie data using the TMDB API. Users can explore trending movies, filter by genre, language, release year, and ratings, and enjoy a smooth, responsive UI with dark/light mode support.",
             video: video,
             link: "https://moviere.netlify.app/"
+        },
+        {
+            tag: "Social Media",
+            name: "Spotlight Labs",
+            description: "fjfjf",
         }
     ]
 
