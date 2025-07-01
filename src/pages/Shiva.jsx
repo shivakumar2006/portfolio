@@ -213,8 +213,14 @@ const Shiva = () => {
             <div className='w-full text-white font-bold pt-10 pl-15 text-6xl'>
                 My<br />Projects
             </div>
-            <div className='w-full min-h-screen'>
-                
+            <div className='w-full min-h-screen border-2 flex flex-col'>
+                <div className='w-full flex flex-row justify-evenly pt-20 items-center'>
+                    <div className='w-140 h-80 rounded-2xl bg-white/10'>
+                        <div className='w-140 h-80 rounded-2xl bg-black translate-y-4 -translate-x-4'>
+                            <img />
+                        </div>
+                    </div>  
+                </div>
             </div>
         </div>
     </>
