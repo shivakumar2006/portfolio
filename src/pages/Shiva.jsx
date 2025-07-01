@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import ajay from "../assets/ajay-kumar-removebg-preview.png";
 import shiva from "../assets/shiva3.png";
 import movie from "../assets/movie.jpg";
@@ -10,6 +10,7 @@ const Shiva = () => {
     const aboutRef = useRef(null);
     const isInView = useInView(aboutRef, { margin: "-100px"});
     const controls = useAnimation();
+    const [ popupVideo, setPopupVideo ] = useState(null);
 
 
     useEffect(() => {
@@ -34,13 +35,23 @@ const Shiva = () => {
         {name: "SupaBase", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-green-600 shadow-[0_0_60px_rgba(0,128,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
         {name: "MySQL", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-800 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},     
         {name: "Node.JS", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-green-600 shadow-[0_0_60px_rgba(0,128,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},   
+        {name: "Netlify", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
     ]
 
     const projects = [
         {
             tag: "Movie",
             name: "Movie Recommendation App",
-            description: "A modern movie recommendation web app built with React, TailwindCSS, Redux Toolkit, and RTK Query. It integrates Supabase for OAuth-based authentication (Google & GitHub) and fetches real-time movie data using the TMDB API. Users can explore trending movies, filter by genre, language, release year, and ratings, and enjoy a smooth, responsive UI with dark/light mode support."
+            description: "A modern movie recommendation web app built with React, TailwindCSS, Redux Toolkit, and RTK Query. It integrates Supabase for OAuth-based authentication (Google & GitHub) and fetches real-time movie data using the TMDB API. Users can explore trending movies, filter by genre, language, release year, and ratings, and enjoy a smooth, responsive UI with dark/light mode support.",
+            video: video,
+            link: "https://moviere.netlify.app/"
+        },
+        {
+            tag: "Movie",
+            name: "Movie Recommendation App",
+            description: "A modern movie recommendation web app built with React, TailwindCSS, Redux Toolkit, and RTK Query. It integrates Supabase for OAuth-based authentication (Google & GitHub) and fetches real-time movie data using the TMDB API. Users can explore trending movies, filter by genre, language, release year, and ratings, and enjoy a smooth, responsive UI with dark/light mode support.",
+            video: video,
+            link: "https://moviere.netlify.app/"
         }
     ]
 
@@ -225,23 +236,50 @@ const Shiva = () => {
                 My<br />Projects
             </div>
             <div className='w-full min-h-screen flex flex-col gap-5'>
-                <div className='w-full flex flex-row justify-evenly pt-20 items-center'>
-                    <div className='w-140 h-80 rounded-2xl bg-white/10'>
+                <div className='w-full flex flex-col justify-evenly pt-20 items-center gap-5'>
+                    {projects?.map((project, index) => {
+                        const isEven = index % 2 == 0;
+                        const videoRef = useRef(null);
+                        return (
+                        <div 
+                            key={index} 
+                            className={`w-full flex flex-col md:flex-row ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-evenly`}
+                            onMouseEnter={() => videoRef.current?.play()} // play video 
+                            onMouseLeave={() => {
+                                videoRef.current?.pause(); // pause video 
+                                videoRef.current.currentTime = 0 // video reset
+                            }}
+                        >
+                        <div className='w-140 h-80 rounded-2xl bg-white/10'>
                         <div className='w-140 h-80 rounded-2xl bg-black translate-y-4 -translate-x-4 overflow-hidden relative group'>
-                            <video 
-                                src={video}
-                                className='w-full h-sull object-cover rounded-2xl'
-                                muted
-                                preload='none'
-                                loop 
-                                playsInline
-                            />
+                          <video 
+                            ref={videoRef}
+                            src={project.video}
+                            className='w-full h-full rounded-2xl transition-all duration-300 group-hover:scale-105'
+                            muted
+                            preload='none'
+                            autoPlay
+                            loop 
+                            playsInline
+                          />
+                          {/* Play icon on hover */}
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div 
+                                className="w-14 h-14 bg-black/40 rounded-full flex items-center justify-center cursor-pointer"
+                                onClick={() => setPopupVideo(project.video)}    
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                              </svg>
+                            </div>
+                          </div>
                         </div>
+
                     </div>  
                     <div className='w-150 h-90 mt-5 flex flex-col'>
                         <div className='w-full flex mt-5 flex-row gap-5'>
                             <div className='w-20 h-8 rounded-2xl text-[10px] cursor-pointer hover:bg-white/20 text-white border border-white flex justify-center items-center'>
-                                <p>Movie</p>
+                                <p>{project.tag}</p>
                             </div>
                             <div className='w-20 h-8 rounded-2xl text-[10px] cursor-pointer hover:bg-white/20 text-white border border-white flex justify-center items-center'>
                                 <p>Web</p>
@@ -249,10 +287,10 @@ const Shiva = () => {
                             
                         </div>
                         <div className='w-full mt-10 flex flex-col'>
-                            <p className='text-white text-2xl'>Movie Recommendation App</p>
-                            <p className='text-white text-sm mt-10'> A modern movie recommendation web app built with React, TailwindCSS, Redux Toolkit, and RTK Query. It integrates Supabase for OAuth-based authentication (Google & GitHub) and fetches real-time movie data using the TMDB API. Users can explore trending movies, filter by genre, language, release year, and ratings, and enjoy a smooth, responsive UI with dark/light mode support.</p>
+                            <p className='text-white text-2xl'>{project.name}</p>
+                            <p className='text-white text-sm mt-10'>{project.description}</p>
                             <a 
-                              href="https://moviere.netlify.app/" 
+                              href={project.link}
                               target="_blank" 
                               rel="noopener noreferrer"
                             >
@@ -264,6 +302,33 @@ const Shiva = () => {
                             </a>
                         </div>
                     </div>
+                    </div>
+                        )
+                    })}
+                    {popupVideo && (
+  <div className="fixed top-0 left-0 w-full h-full bg-black/70 z-50 flex justify-center items-center">
+    <div className="relative w-[80%] max-w-[720px] bg-black rounded-xl p-4">
+      
+      {/* Close Button */}
+      <button
+        className="absolute top-2 right-[-3px] text-white text-4xl cursor-pointer"
+        onClick={() => setPopupVideo(null)}
+      >
+        &times;
+      </button>
+
+      {/* Video Player */}
+      <video
+        src={popupVideo}
+        className="w-full h-auto rounded-xl"
+        controls
+        autoPlay
+      />
+    </div>
+  </div>
+)}
+
+                
                 </div>
             </div>
         </div>
