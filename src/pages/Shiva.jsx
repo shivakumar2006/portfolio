@@ -17,6 +17,22 @@ const Shiva = () => {
         }
     }, [isInView, controls])
 
+    const skills = [
+        {name: "React", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "TailwindCSS", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "HTML", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-orange-400 shadow-[0_0_60px_rgba(255,165,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "CSS", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "Javascript", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg", className: 'w-30 h-32 border-2 bg-black/20 border-yellow-300 shadow-[0_0_60px_rgba(255,255,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "Redux", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg", className: 'w-30 h-32 border-2 bg-black/20 border-purple-500 shadow-[0_0_60px_rgba(128,0,128,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "GOlang", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "MongoDB", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-green-600 shadow-[0_0_60px_rgba(0,128,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "C++", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "C", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "SupaBase", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-green-600 shadow-[0_0_60px_rgba(0,128,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "MySQL", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-800 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},     
+        {name: "Node.JS", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-green-600 shadow-[0_0_60px_rgba(0,128,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},   
+    ]
+
   return (
     <>
     <div className='w-screen h-screen bg-black flex justify-center items-center'>
@@ -33,8 +49,8 @@ const Shiva = () => {
             <div className='w-159 h-11 text-white font-bold bg-black rounded-3xl flex flex-row justify-center items-center gap-17'>
               <p className='ml-0 cursor-pointer hover:text-gray-300'>Home</p>
               <p className='cursor-pointer hover:text-gray-300'>About</p>
-              <p className='cursor-pointer hover:text-gray-300' onClick={() => setPortfolioMode(true)}>Portfolio</p>
-              <p className='cursor-pointer hover:text-gray-300'>Hobby</p>
+              <p className='cursor-pointer hover:text-gray-300' onClick={() => setPortfolioMode(true)}>Skills</p>
+              <p className='cursor-pointer hover:text-gray-300'>Projects</p>
               <p className='cursor-pointer hover:text-gray-300'>Contact</p>
             </div>
           </div>
@@ -99,6 +115,7 @@ const Shiva = () => {
     {/* about me */}
     <motion.div 
         className='w-screen h-screen bg-black flex justify-center items-center'
+        // style={{background: "linear-gradient(171deg,rgba(23, 4, 48, 1) 0%, rgba(16, 3, 31, 1) 100%)"}}
         ref={aboutRef}
         initial={{ opacity: 0, y: 100 }}
         animate={controls}
@@ -156,12 +173,50 @@ const Shiva = () => {
   </div>
             
             
-</motion.div>
+    </motion.div>
 
-<div className='w-full h-screen bg-pink-500'>
-
+        {/* skills */}
+        <div 
+            className='w-full h-screen bg-pink-500'
+            // style={{background: "linear-gradient(203deg,rgba(0, 0, 0, 1) 0%, rgba(23, 1, 10, 1) 17%, rgba(38, 2, 2, 1) 30%, rgba(22, 3, 43, 1) 60%, rgba(34, 30, 56, 1) 89%, rgba(0, 0, 0, 1) 100%)"}}
+            style={{background: "linear-gradient(171deg,rgba(23, 4, 48, 1) 0%, rgba(16, 3, 31, 1) 100%)"}}
+        >
+            <div className='w-full text-white text-6xl font-extrabold flex justify-center items-center pt-20'>
+                    My Skills
             </div>
-
+            <div className='w-full min-h-140 mt-20 ml-[-40px] flex flex-wrap justify-center overflow-visible'>
+                {skills?.map((item, index) => (
+                <motion.div 
+                  key={index}
+                  className={item.className}
+                  whileHover={{ y: 0}}
+                  initial={{ y: 0 }}
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.2,
+                  }}
+                >
+                  <img src={item.pic} className='w-18' />
+                  <p className='text-white mt-2'>{item.name}</p>
+                </motion.div>
+                ))}
+            </div>
+            </div>
+            
+        {/* projects */}
+        <div className='w-full min-h-screen'
+            style={{background: "linear-gradient(94deg,rgba(5, 0, 8, 1) 0%, rgba(75, 5, 102, 1) 23%, rgba(34, 6, 92, 1) 77%, rgba(0, 0, 0, 1) 100%)"}}
+        >
+            <div className='w-full text-white font-bold pt-10 pl-15 text-6xl'>
+                My<br />Projects
+            </div>
+            <div className='w-full min-h-screen'>
+                
+            </div>
+        </div>
     </>
   )
 }

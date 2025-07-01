@@ -131,7 +131,9 @@ const Landing = () => {
             Together, we believe in sharing knowledge, writing clean code, and turning ideas into meaningful experiences.
           </p>
         </div>
-        <button className='w-50 h-15 cursor-pointer bg-white rounded-xl text-xl font-extrabold shadow-xl'>
+        <button className='btn-grad'
+          style={{}}
+        >
           Portfolio
         </button>
       </div>
