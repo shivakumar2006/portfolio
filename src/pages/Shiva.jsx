@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import ajay from "../assets/ajay-kumar-removebg-preview.png";
 import shiva from "../assets/shiva3.png";
+import movie from "../assets/movie.jpg";
+import video from "../assets/video.mp4";
 import { motion, useInView, useAnimation } from 'framer-motion';
 
 const Shiva = () => {
@@ -8,6 +10,7 @@ const Shiva = () => {
     const aboutRef = useRef(null);
     const isInView = useInView(aboutRef, { margin: "-100px"});
     const controls = useAnimation();
+
 
     useEffect(() => {
         if (isInView) {
@@ -31,6 +34,14 @@ const Shiva = () => {
         {name: "SupaBase", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-green-600 shadow-[0_0_60px_rgba(0,128,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
         {name: "MySQL", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-800 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},     
         {name: "Node.JS", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-green-600 shadow-[0_0_60px_rgba(0,128,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},   
+    ]
+
+    const projects = [
+        {
+            tag: "Movie",
+            name: "Movie Recommendation App",
+            description: "A modern movie recommendation web app built with React, TailwindCSS, Redux Toolkit, and RTK Query. It integrates Supabase for OAuth-based authentication (Google & GitHub) and fetches real-time movie data using the TMDB API. Users can explore trending movies, filter by genre, language, release year, and ratings, and enjoy a smooth, responsive UI with dark/light mode support."
+        }
     ]
 
   return (
@@ -213,13 +224,46 @@ const Shiva = () => {
             <div className='w-full text-white font-bold pt-10 pl-15 text-6xl'>
                 My<br />Projects
             </div>
-            <div className='w-full min-h-screen border-2 flex flex-col'>
+            <div className='w-full min-h-screen flex flex-col gap-5'>
                 <div className='w-full flex flex-row justify-evenly pt-20 items-center'>
                     <div className='w-140 h-80 rounded-2xl bg-white/10'>
-                        <div className='w-140 h-80 rounded-2xl bg-black translate-y-4 -translate-x-4'>
-                            <img />
+                        <div className='w-140 h-80 rounded-2xl bg-black translate-y-4 -translate-x-4 overflow-hidden relative group'>
+                            <video 
+                                src={video}
+                                className='w-full h-sull object-cover rounded-2xl'
+                                muted
+                                preload='none'
+                                loop 
+                                playsInline
+                            />
                         </div>
                     </div>  
+                    <div className='w-150 h-90 mt-5 flex flex-col'>
+                        <div className='w-full flex mt-5 flex-row gap-5'>
+                            <div className='w-20 h-8 rounded-2xl text-[10px] cursor-pointer hover:bg-white/20 text-white border border-white flex justify-center items-center'>
+                                <p>Movie</p>
+                            </div>
+                            <div className='w-20 h-8 rounded-2xl text-[10px] cursor-pointer hover:bg-white/20 text-white border border-white flex justify-center items-center'>
+                                <p>Web</p>
+                            </div>
+                            
+                        </div>
+                        <div className='w-full mt-10 flex flex-col'>
+                            <p className='text-white text-2xl'>Movie Recommendation App</p>
+                            <p className='text-white text-sm mt-10'> A modern movie recommendation web app built with React, TailwindCSS, Redux Toolkit, and RTK Query. It integrates Supabase for OAuth-based authentication (Google & GitHub) and fetches real-time movie data using the TMDB API. Users can explore trending movies, filter by genre, language, release year, and ratings, and enjoy a smooth, responsive UI with dark/light mode support.</p>
+                            <a 
+                              href="https://moviere.netlify.app/" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                            >
+                              <button 
+                                className="btn-grad mt-15 w-50 h-12 text-[12px] text-sm shadow-none flex justify-center items-center cursor-pointer"
+                              >
+                                Project Link
+                              </button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
