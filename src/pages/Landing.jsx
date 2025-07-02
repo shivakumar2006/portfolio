@@ -90,7 +90,7 @@ const Landing = () => {
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 className='w-60 h-60 bg-white text-black rounded-full flex flex-col justify-center items-center cursor-pointer'
-                onClick={() => alert("Ajay's portfolio")}
+                onClick={() => navigate("/ajay/portfolio")}
               >
                 <img src={ajay} className='w-28 h-28 rounded-full object-cover mb-2' />
                 <p className='font-semibold'>Ajay Kumar</p>

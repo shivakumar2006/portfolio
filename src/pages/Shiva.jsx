@@ -131,9 +131,8 @@ const Shiva = () => {
             Full Stack Developer | Content Creator
           </p>
           <p className='text-gray-500 mt-7 ml-7 text-xl'>
-            A BCA student by degree, a full-stack developer by passion, and a content creator by choice.
-            I’m focused on learning, building, and inspiring others through code and content.
-          </p>
+            Bachelor of Computer Applications (BCA) student actively building real-world full-stack projects using React, Go, TailwindCSS, Supabase, and Redux. Passionate about software engineering, problem-solving, and sharing my journey to inspire others. Currently focused on mastering scalable architecture, API design, and clean code practices through hands-on learning and content creation.
+        </p>
           <motion.button className='w-50 h-12 mt-10 mr-115 shadow-2xl shadow-black text-white rounded-3xl cursor-pointer'
             style={{background: "linear-gradient(129deg,rgba(162, 0, 255, 1) 0%, rgba(133, 68, 199, 1) 21%, rgba(155, 43, 240, 1) 42%, rgba(230, 21, 104, 1) 47%, rgba(245, 2, 2, 1) 52%, rgba(227, 31, 9, 1) 68%, rgba(222, 23, 9, 1) 82%, rgba(222, 4, 4, 1) 100%)"}}
             animate={{
