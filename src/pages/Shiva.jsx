@@ -3,12 +3,16 @@ import ajay from "../assets/ajay-kumar-removebg-preview.png";
 import shiva from "../assets/shiva3.png";
 import movie from "../assets/movie.jpg";
 import video from "../assets/video.mp4";
-import 
+import spotlight from "../assets/spotlight.mp4";
+import cart from "../assets/cart.mp4";
+import crypto from "../assets/crypto.mp4";
+import emailjs from "@emailjs/browser";
 import { motion, useInView, useAnimation } from 'framer-motion';
 
 const Shiva = () => {
 
     const aboutRef = useRef(null);
+    const formRef = useRef();
     const isInView = useInView(aboutRef, { margin: "-100px"});
     const controls = useAnimation();
     const [ popupVideo, setPopupVideo ] = useState(null);
@@ -21,6 +25,25 @@ const Shiva = () => {
             controls.start({ opacity: 0, y: 100}) // reset when out of view
         }
     }, [isInView, controls])
+
+    const sendEmail = (e) => {
+        e.preventDefault(),
+
+        emailjs.sendForm(
+            'service_gfmg64d',             // ✅ Service ID
+            'template_1m4pdhj',            // ✅ Template ID
+            formRef.current,
+            'EdzXORZsoIBGCNMNl'           // ✅ Public Key
+        )
+        .then(() => {
+            alert('Message sent successfully');
+            e.target.reset(); // reset form fileds 
+        })
+        .catch((error) => {
+            alert('Failed to send message', + error.text);
+        })
+
+    }
 
     const skills = [
         {name: "React", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
@@ -43,9 +66,9 @@ const Shiva = () => {
         {
             tag: "Social",
             name: "Spotlight Labs",
-            description: "A modern movie recommendation web app built with React, TailwindCSS, Redux Toolkit, and RTK Query. It integrates Supabase for OAuth-based authentication (Google & GitHub) and fetches real-time movie data using the TMDB API. Users can explore trending movies, filter by genre, language, release year, and ratings, and enjoy a smooth, responsive UI with dark/light mode support.",
-            video: video,
-            link: "https://moviere.netlify.app/"
+            description: "Spotlight Labs is a project built with React, TailwindCSS, Redux Toolkit, and Go for the backend. It features manual email authentication using Supabase SQL, SMTP with Google App Passwords, and custom APIs for signup/login. The project focuses on secure, custom-built auth without relying on third-party OAuth services.",
+            video: spotlight,
+            link: "https://spotlig.netlify.app/"
         },
         {
             tag: "Movie",
@@ -55,10 +78,19 @@ const Shiva = () => {
             link: "https://moviere.netlify.app/"
         },
         {
-            tag: "Social Media",
-            name: "Spotlight Labs",
-            description: "fjfjf",
-        }
+            tag: "Cart",
+            name: "Cart",
+            description: "Cart App is a modern shopping cart interface built with React, TailwindCSS, Redux Toolkit, and RTK Query, designed with a primary focus on learning and mastering Redux state management. It includes features like add/remove items, quantity updates, and efficient data fetching.",
+            video: cart,
+            link: "https://shivaredux.netlify.app/"
+        },
+        {
+            tag: "Crypto",
+            name: "Crypto Currency App",
+            description: "Crypto App is a sleek and responsive cryptocurrency tracking app built with React, TailwindCSS, Ant Design, and CryptoRanking API via RapidAPI. It displays real-time data on top coins, prices, market trends, and more—perfect for learning API integration and UI libraries.",
+            video: crypto,
+            link: "https://shivacrypto.netlify.app/"
+        },
     ]
 
   return (
@@ -256,7 +288,7 @@ const Shiva = () => {
                                 videoRef.current.currentTime = 0 // video reset
                             }}
                         >
-                        <div className='w-140 h-80 rounded-2xl bg-white/10'>
+                        <div className='w-140 h-80 rounded-2xl bg-white/20'>
                         <div className='w-140 h-80 rounded-2xl bg-black translate-y-4 -translate-x-4 overflow-hidden relative group'>
                           <video 
                             ref={videoRef}
@@ -312,29 +344,91 @@ const Shiva = () => {
                         )
                     })}
                     {popupVideo && (
-  <div className="fixed top-0 left-0 w-full h-full bg-black/70 z-50 flex justify-center items-center">
-    <div className="relative w-[80%] max-w-[720px] bg-black rounded-xl p-4">
-      
-      {/* Close Button */}
-      <button
-        className="absolute top-2 right-[-3px] text-white text-4xl cursor-pointer"
-        onClick={() => setPopupVideo(null)}
-      >
-        &times;
-      </button>
+                      <div className="fixed top-0 left-0 w-full h-full bg-black/70 z-50 flex justify-center items-center">
+                        <div className="relative w-[80%] max-w-[720px] bg-black rounded-xl p-4">
 
-      {/* Video Player */}
-      <video
-        src={popupVideo}
-        className="w-full h-auto rounded-xl"
-        controls
-        autoPlay
-      />
-    </div>
-  </div>
-)}
+                          {/* Close Button */}
+                          <button
+                            className="absolute top-2 right-[-3px] text-white text-4xl cursor-pointer"
+                            onClick={() => setPopupVideo(null)}
+                          >
+                            &times;
+                          </button>
+
+                          {/* Video Player */}
+                          <video
+                            src={popupVideo}
+                            className="w-full h-auto rounded-xl"
+                            controls
+                            autoPlay
+                          />
+                        </div>
+                      </div>
+                    )}
 
                 
+                </div>
+            </div>
+        </div>
+
+        {/* Contact */}
+        <div className='w-full min-h-screen'
+            style={{background: "linear-gradient(51deg,rgba(64, 6, 102, 1) 0%, rgba(97, 5, 133, 1) 17%, rgba(7, 1, 10, 1) 69%, rgba(0, 0, 0, 1) 100%)"}}
+        >
+            <div className='w-full pt-15 pl-15 text-white text-6xl font-bold'>
+                <p>Contact me</p>
+            </div>
+            <div className='w-full mt-10 flex flex-row justify-center items-center'>
+                <div className='w-180 flex flex-col jusitfy-center items-center'>
+                    <div className=''>
+
+                    </div>
+                </div>
+                <div className='w-180 flex flex-col jusitfy-center items-center'>
+                    <form 
+                        ref={formRef}
+                        onSubmit={sendEmail}
+                        className='w-160 h-140 bg-white/10  rounded-3xl flex flex-col'>
+                        <h1 className='text-white text-3xl text-center mt-10 font-bold'>Get In Touch</h1>
+                        <div className='w-full h-18 mt-10 flex flex-row justify-evenly items-center'>
+                            <div className='w-80 h-18 flex flex-col justify-center items-center gap-3'>
+                                <p className='text-white text-md font-bold mr-50'>Name</p>
+                                <input 
+                                    type='text'
+                                    name='from_name'
+                                    placeholder='Your name'
+                                    required
+                                    className='w-70 h-8 rounded-2xl text-[12px] pl-5 placeholder:text-gray-300 bg-white/30 '
+                                />
+                            </div>
+                           <div className='w-80 h-18 flex flex-col justify-center items-center gap-3'>
+                                <p className='text-white text-md font-bold mr-50'>E-mail</p>
+                                <input 
+                                    type='text'
+                                    name='user_email'
+                                    placeholder='Your Email'
+                                    required
+                                    className='w-70 h-8 rounded-2xl text-[12px] pl-5 placeholder:text-gray-300 bg-white/30 '
+                                />
+                            </div>
+                        </div>
+                        <div className='w-full h-70 mt-5 flex flex-col justify-center items-center'>
+                          <div className='w-full h-8 ml-15 text-white text-md'>
+                            Leave us a message
+                          </div>
+                          <div>
+                            <textarea 
+                              className='w-145 h-60 rounded-xl bg-white/10 p-3 text-white resize-none'
+                              placeholder='Enter your message'
+                              name='message'
+                              required
+                            />
+                          </div>
+                        </div>
+                        <button type='submit' className='w-50 h-8 bg-white rounded-2xl mt-4 ml-100 cursor-pointer text-black'>
+                            Send message
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
