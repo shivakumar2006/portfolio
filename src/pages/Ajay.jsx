@@ -57,10 +57,14 @@ const Ajay = () => {
         {name: "GOlang", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
         {name: "Python", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
         {name: "Redis", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-red-600 shadow-[0_0_60px_rgba(255,0,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
-        {name: "AWS", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg", className:'w-30 h-32 border-2 bg-black/10 border-orange-400 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},     
+        {name: "AWS", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg", className:'w-30 h-32 border-2 bg-black/10 border-orange-400 shadow-[0_0_60px_rgba(255,165,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},     
         {name: "ApacheKafka", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg", className:'w-30 h-32 border-2 bg-white/20 border-green-600 shadow-[0_0_60px_rgba(0,128,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},   
         {name: "Kubernetes", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-500 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
         {name: "PostgresSQl", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-500 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "Jenkins", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-red-600 shadow-[0_0_60px_rgba(255,0,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "Azure", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-500 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "Docker", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "GIT", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg", className:'w-30 h-32 border-2 bg-black/10 border-orange-600 shadow-[0_0_60px_rgba(255,165,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},     
     ]
 
     const projects = [
@@ -211,15 +215,37 @@ const Ajay = () => {
 
     {/* Right Section */}
     <div className='w-180 h-150 mr-25 flex flex-row justify-center items-center'>
-        <div className='w-40 h-150 pl-30 flex flex-col justify-center items-center'>
+        <div className='w-40 h-150 pl-30 flex flex-col justify-center items-center gap-2'>
             <div className='w-4 h-4 bg-purple-900 rounded-full'></div>
-            <div className='h-40 border border-purple-500'></div>
+            <div className='h-30 border border-purple-500'></div>
             <div className='w-4 h-4 bg-pink-600 rounded-full'></div>
             <div className='h-30 border border-red-500'></div>
             <div className='w-4 h-4 bg-red-900 rounded-full'></div>
+            <div className='w-2 h-2 pt-5 bg-white rounded-full'></div>
+            <div className='h-51 border border-white'></div>
+            <div className='w-2 h-2 pt-5 bg-white rounded-full'></div>
         </div>
-        <div className='w-140 h-150 flex flex-col justify-center items-center'>
-            <p className='text-md text-white font-extralight mr-17'><span className='text-xl font-extrabold text-gray-400'>Role:</span> Full-Stack Developer (Project-Based)</p>
+        <div className='w-120 ml-20 h-170 text-white flex flex-col justify-center items-center'>
+            <p className='font-bold text-xl mr-50'>Senior Software Engineer</p>
+            <p className='font-extralight text-[14px] mr-65'>Victoria's Secret - Full-time</p>
+            <p className='font-extralight text-gray-300 text-[14px] mr-59'>Nov 2021 - Present 3 yrs 9 mos</p>
+            <p className='font-extralight text-gray-300 text-[14px] mr-64'>Bengaluru, Karnataka, India</p>
+
+            <p className='font-bold text-xl mt-15 mr-55'>MTS-2 System Engineer</p>
+            <p className='font-extralight text-[14px] mr-81'>Verizon - Full-time</p>
+            <p className='font-extralight text-gray-300 text-[14px] mr-58'>Sep 2019 - Nov 2021  2 yrs 3 mos</p>
+            <p className='font-extralight text-gray-300 text-[14px] mr-67'>Chennai, Tamil Nadu, India</p>
+
+            <p className='font-bold text-xl mt-15 mr-78'>Tech Mahindra</p>
+            <p className='font-extralight text-[14px] mr-78'>Full-time e yrs 1 mos</p>
+            <p className='font-bold text-xl mt-6 mr-70'>Software Engineer</p>
+            <p className='font-extralight text-gray-300 text-[14px] mr-60'>Aug 2017 - Aug 2019  2 yrs 1 mos</p>
+            <p className='font-extralight text-gray-300 text-[14px] mr-69'>Chennai, Tamil Nadu, India</p>
+
+            <p className='font-bold text-xl mt-12 mr-46'>Associate Software Engineer</p>
+            <p className='font-extralight text-gray-300 text-[14px] mr-61'>Aug 2016 - Aug 2017  1 yrs 1 mos</p>
+            <p className='font-extralight text-gray-300 text-[14px] mr-68'>Bengaluru, Karnataka, India</p>
+            {/* <p className='text-md text-white font-extralight mr-17'><span className='text-xl font-extrabold text-gray-400'>Role:</span> Full-Stack Developer (Project-Based)</p>
             <p className='text-md text-white font-extralight'><span className='text-xl font-extrabold text-gray-400'>Status:</span> BCA Student | Content Creator on YouTube</p>
             <p className='text-md text-white ml-10 font-extralight'><span className='text-xl font-extrabold text-gray-400'>Tools:</span> React, Tailwind CSS, Redux Toolkit, Supabase, Go</p>
             <p className='text-xl text-white mt-8 mr-75'>Highlight:</p>
@@ -227,7 +253,7 @@ const Ajay = () => {
             <p className='text-md text-white ml-25'>Worked with external APIs like TMDB and Spotify for real-time data</p>
             <p className='text-md text-white ml-25'>Created and deployed full-stack projects to showcase practical learning</p>
             <p className='text-md text-white ml-25'>Collaborated closely with mentor to follow real-world development practices</p>
-            <p className='text-md text-white ml-25'>Sharing my learning journey and tech content on YouTube to help other developers</p>
+            <p className='text-md text-white ml-25'>Sharing my learning journey and tech content on YouTube to help other developers</p> */}
         </div>
     </div>
   </div>
@@ -237,14 +263,14 @@ const Ajay = () => {
 
         {/* skills */}
         <div 
-            className='w-full h-screen bg-pink-500'
+            className='w-full min-h-screen bg-pink-500'
             // style={{background: "linear-gradient(203deg,rgba(0, 0, 0, 1) 0%, rgba(23, 1, 10, 1) 17%, rgba(38, 2, 2, 1) 30%, rgba(22, 3, 43, 1) 60%, rgba(34, 30, 56, 1) 89%, rgba(0, 0, 0, 1) 100%)"}}
             style={{background: "linear-gradient(171deg,rgba(23, 4, 48, 1) 0%, rgba(16, 3, 31, 1) 100%)"}}
         >
             <div className='w-full text-white text-6xl font-extrabold flex justify-center items-center pt-20'>
                     My Skills
             </div>
-            <div className='w-full min-h-140 mt-20 ml-[-40px] flex flex-wrap justify-center overflow-visible'>
+            <div className='w-full min-h-screen mt-20 ml-[-40px] flex flex-wrap justify-center overflow-visible'>
                 {skills?.map((item, index) => (
                 <motion.div 
                   key={index}
