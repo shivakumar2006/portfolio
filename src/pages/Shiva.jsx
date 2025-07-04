@@ -388,10 +388,20 @@ const Shiva = () => {
             <div className='w-full mt-10 flex flex-row justify-center items-center'>
                 <div className='w-180 flex flex-col jusitfy-center items-center'>
                     <div className='w-full h-40 flex flex-row justify-evenly items-center'>
-                        <FaLinkedin className='rounded-xl cursor-pointer bg-white text-blue-500 text-8xl'/>
+                        <FaLinkedin 
+                        className='rounded-xl cursor-pointer bg-white text-blue-500 text-8xl'
+                        onClick={() => Navigate("")}
+                        />
                         <FaGithub className='rounded-full cursor-pointer text-black bg-white text-8xl'/>
-                        <FaYoutube className='rounded-xl cursor-pointer h-18 bg-white text-red-500 text-8xl'/>
+                        <FaYoutube 
+                        className='rounded-xl cursor-pointer h-18 bg-white text-red-500 text-8xl'
+                        onClick={() => window.open("https://www.youtube.com/@shivakumar2006-j", "_blank")}
+                        />
                     </div>
+                    <div className='w-150 mt-20 text-3xl h-20 text-center'>
+                        <p className='text-white'>"Code hard. Train hard. Stay real. If you’ve got a project, a vision, or just some fire to share — I’m listening."</p>
+                    </div>
+                    
                     {/* <div className='w-full text-white flex flex-row justify-evenly items-center'>
                         <p className='ml-[-12px]'>Linkedin</p>
                         <p className='ml-3'>Github</p>
