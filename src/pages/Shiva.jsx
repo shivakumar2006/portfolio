@@ -9,6 +9,10 @@ import crypto from "../assets/crypto.mp4";
 import emailjs from "@emailjs/browser";
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+
 
 const Shiva = () => {
 
@@ -383,9 +387,16 @@ const Shiva = () => {
             </div>
             <div className='w-full mt-10 flex flex-row justify-center items-center'>
                 <div className='w-180 flex flex-col jusitfy-center items-center'>
-                    <div className=''>
-
+                    <div className='w-full h-40 flex flex-row justify-evenly items-center'>
+                        <FaLinkedin className='rounded-xl cursor-pointer bg-white text-blue-500 text-8xl'/>
+                        <FaGithub className='rounded-full cursor-pointer text-black bg-white text-8xl'/>
+                        <FaYoutube className='rounded-xl cursor-pointer h-18 bg-white text-red-500 text-8xl'/>
                     </div>
+                    {/* <div className='w-full text-white flex flex-row justify-evenly items-center'>
+                        <p className='ml-[-12px]'>Linkedin</p>
+                        <p className='ml-3'>Github</p>
+                        <p className='mr-[-10px]'>Youtube</p>
+                    </div> */}
                 </div>
                 <div className='w-180 flex flex-col jusitfy-center items-center'>
                     <form 
