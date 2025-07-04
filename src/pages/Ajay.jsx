@@ -7,6 +7,7 @@ import spotlight from "../assets/spotlight.mp4";
 import cart from "../assets/cart.mp4";
 import crypto from "../assets/crypto.mp4";
 import emailjs from "@emailjs/browser";
+import { useNavigate } from 'react-router-dom';
 import { motion, useInView, useAnimation } from 'framer-motion';
 
 const Ajay = () => {
@@ -16,6 +17,7 @@ const Ajay = () => {
     const isInView = useInView(aboutRef, { margin: "-100px"});
     const controls = useAnimation();
     const [ popupVideo, setPopupVideo ] = useState(null);
+    const Navigate = useNavigate();
 
 
     useEffect(() => {
@@ -112,7 +114,9 @@ const Ajay = () => {
             style={{background: "linear-gradient(90deg,rgba(79, 0, 158, 1) 1%, rgba(120, 26, 214, 1) 21%, rgba(181, 107, 255, 1) 42%, rgba(255, 89, 89, 1) 52%, rgba(209, 13, 6, 1) 68%, rgba(133, 0, 0, 1) 99%)"}}
           >
             <div className='w-159 h-11 text-white font-bold bg-black rounded-3xl flex flex-row justify-center items-center gap-17'>
-              <p className='ml-0 cursor-pointer hover:text-gray-300'>Home</p>
+              <p className='ml-0 cursor-pointer hover:text-gray-300'
+                onClick={() => Navigate("/")}
+              >Home</p>
               <p className='cursor-pointer hover:text-gray-300'>About</p>
               <p className='cursor-pointer hover:text-gray-300' onClick={() => setPortfolioMode(true)}>Skills</p>
               <p className='cursor-pointer hover:text-gray-300'>Projects</p>
