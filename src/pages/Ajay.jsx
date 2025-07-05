@@ -9,15 +9,44 @@ import crypto from "../assets/crypto.mp4";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from 'react-router-dom';
 import { motion, useInView, useAnimation } from 'framer-motion';
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
+
 
 const Ajay = () => {
 
     const aboutRef = useRef(null);
+    const skillRef = useRef(null);
+    const projectRef = useRef(null);
+    const contactRef = useRef(null);
+    const homeRef = useRef(null);
     const formRef = useRef();
     const isInView = useInView(aboutRef, { margin: "-100px"});
     const controls = useAnimation();
     const [ popupVideo, setPopupVideo ] = useState(null);
     const Navigate = useNavigate();
+
+    const scrollToAbout = () => {
+        aboutRef.current?.scrollIntoView({ behavior: 'smooth'})
+    }
+
+    const scrollToSkills = () => {
+        skillRef.current?.scrollIntoView({ behavior: 'smooth'})
+    }
+
+    const scrollToProject = () => {
+        projectRef.current?.scrollIntoView({ behavior: 'smooth'})
+    }
+    
+    const scrollToContact = () => {
+        contactRef.current?.scrollIntoView({ behavior: 'smooth'})
+    }
+     
+    const ScrollToHome = () => {
+        homeRef.current?.scrollIntoView({ behavior: 'smooth'})
+    }
 
 
     useEffect(() => {
@@ -102,7 +131,7 @@ const Ajay = () => {
 
   return (
     <>
-    <div className='w-screen h-screen bg-black flex justify-center items-center'>
+    <div ref={homeRef} className='w-screen h-screen bg-black flex justify-center items-center'>
     <div className='magicpattern w-180 rounded-4xl hscreen'>
         {/* Navbar */}
         <div className='w-full flex flex-row justify-between items-center pt-5 pl-10'>
@@ -117,10 +146,10 @@ const Ajay = () => {
               <p className='ml-0 cursor-pointer hover:text-gray-300'
                 onClick={() => Navigate("/")}
               >Home</p>
-              <p className='cursor-pointer hover:text-gray-300'>About</p>
-              <p className='cursor-pointer hover:text-gray-300' onClick={() => setPortfolioMode(true)}>Skills</p>
-              <p className='cursor-pointer hover:text-gray-300'>Projects</p>
-              <p className='cursor-pointer hover:text-gray-300'>Contact</p>
+              <p className='cursor-pointer hover:text-gray-300' onClick={scrollToAbout}>About</p>
+              <p className='cursor-pointer hover:text-gray-300' onClick={scrollToSkills}>Skills</p>
+              <p className='cursor-pointer hover:text-gray-300' onClick={scrollToProject}>Projects</p>
+              <p className='cursor-pointer hover:text-gray-300' onClick={scrollToContact}>Contact</p>
             </div>
           </div>
         </div>
@@ -182,9 +211,9 @@ const Ajay = () => {
 
     {/* about me */}
     <motion.div 
+        ref={aboutRef}
         className='w-screen h-screen bg-black flex justify-center items-center'
         // style={{background: "linear-gradient(171deg,rgba(23, 4, 48, 1) 0%, rgba(16, 3, 31, 1) 100%)"}}
-        ref={aboutRef}
         initial={{ opacity: 0, y: 100 }}
         animate={controls}
         transition={{ duration: 1, ease: "easeInOut" }}
@@ -267,6 +296,7 @@ const Ajay = () => {
 
         {/* skills */}
         <div 
+            ref={skillRef}
             className='w-full min-h-screen bg-pink-500'
             // style={{background: "linear-gradient(203deg,rgba(0, 0, 0, 1) 0%, rgba(23, 1, 10, 1) 17%, rgba(38, 2, 2, 1) 30%, rgba(22, 3, 43, 1) 60%, rgba(34, 30, 56, 1) 89%, rgba(0, 0, 0, 1) 100%)"}}
             style={{background: "linear-gradient(171deg,rgba(23, 4, 48, 1) 0%, rgba(16, 3, 31, 1) 100%)"}}
@@ -297,7 +327,7 @@ const Ajay = () => {
             </div>
             
         {/* projects */}
-        <div className='w-full min-h-screen'
+        <div ref={projectRef} className='w-full min-h-screen'
             style={{background: "linear-gradient(94deg,rgba(5, 0, 8, 1) 0%, rgba(75, 5, 102, 1) 23%, rgba(34, 6, 92, 1) 77%, rgba(0, 0, 0, 1) 100%)"}}
         >
             <div className='w-full text-white font-bold pt-10 pl-15 text-6xl'>
@@ -402,7 +432,7 @@ const Ajay = () => {
         </div>
 
         {/* Contact */}
-        <div className='w-full min-h-screen'
+        <div ref={contactRef} className='w-full min-h-screen'
             style={{background: "linear-gradient(51deg,rgba(64, 6, 102, 1) 0%, rgba(97, 5, 133, 1) 17%, rgba(7, 1, 10, 1) 69%, rgba(0, 0, 0, 1) 100%)"}}
         >
             <div className='w-full pt-15 pl-15 text-white text-6xl font-bold'>
@@ -410,9 +440,31 @@ const Ajay = () => {
             </div>
             <div className='w-full mt-10 flex flex-row justify-center items-center'>
                 <div className='w-180 flex flex-col jusitfy-center items-center'>
-                    <div className=''>
-
-                    </div>
+                    <div className='w-full h-40 flex flex-row justify-evenly items-center'>
+                                            <FaLinkedin 
+                                            className='rounded-xl cursor-pointer bg-white text-blue-500 text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_10px_#fff]'
+                                            onClick={() => window.open("https://www.linkedin.com/in/shiva-shiva-8a48002a7", "_blank")}
+                                            />
+                                            <FaGithub 
+                                            className='rounded-full cursor-pointer text-black bg-white text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
+                                            onClick={() => window.open("https://github.com/shivakumar2006", "_blank")}
+                                            />
+                                            <FaYoutube 
+                                            className='rounded-xl cursor-pointer h-18 bg-white text-red-500 text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
+                                            onClick={() => window.open("https://www.youtube.com/@shivakumar2006-j", "_blank")}
+                                            />
+                                        </div>
+                                        <div className='w-150 mt-20 text-3xl h-20 text-center'>
+                                            <p className='text-white'>"Code hard. Train hard. Stay real. If you’ve got a project, a vision, or just some fire to share — I’m listening."</p>
+                                        </div>
+                    
+                                        <a
+                                          href="/resume.pdf"
+                                          download="resume.pdf"
+                                          className="flex items-center mt-20 gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-semibold hover:scale-105 transition-transform duration-300"
+                                        >
+                                          <FaDownload /> Download CV
+                                        </a>
                 </div>
                 <div className='w-180 flex flex-col jusitfy-center items-center'>
                     <form 
@@ -459,6 +511,17 @@ const Ajay = () => {
                             Send message
                         </button>
                     </form>
+                </div>
+            </div>
+            <div className='w-full h-20 mt-5 rounded-t-3xl bg-white/10 flex flex-row'>
+                <div className='w-full h-15 text-white text-2xl ml-10 mt-3 flex flex-row justify-evenly items-center gap-10'>
+                    <p className='mr-50'>Ajay Kumar</p>
+                    <div className='w-100 h-10 rounded-3xl hover:bg-black/30 text-[15px] bg-black/10 text-white flex flex-row justify-evenly items-center'>
+                        <p className='cursor-pointer' onClick={ScrollToHome}>Home</p>
+                        <p  className='cursor-pointer' onClick={scrollToAbout}>About</p>
+                        <p  className='cursor-pointer' onClick={scrollToSkills}>Skills</p>
+                    </div>
+                    <p className='text-[13px] ml-50'>official.shivakumar06@gmail.com</p>
                 </div>
             </div>
         </div>

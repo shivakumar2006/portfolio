@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaEarthAmericas } from "react-icons/fa6";
 import { motion, AnimatePresence } from 'framer-motion';
 import ajay from "../assets/ajay-kumar-removebg-preview.png";
 import shiva from "../assets/shiva3.png";
 import { useNavigate } from 'react-router-dom';
+import { scroll } from 'framer-motion/dom';
 
 const Landing = () => {
 
   const [portfolioMode, setPortfolioMode] = useState(false);
   const navigate = useNavigate();
+  const aboutRef = useRef(null);
+
+  const scrollToAbout = () => {
+    aboutRef.current?.scrollIntoView({ behavior: 'smooth'});
+  }
 
   return (
     <>
@@ -31,7 +37,7 @@ const Landing = () => {
           >
             <div className='w-111 h-11 text-white font-bold bg-black/80 rounded-3xl flex flex-row justify-between items-center'>
               <p className='ml-15 cursor-pointer hover:text-gray-300'>Home</p>
-              <p className='cursor-pointer hover:text-gray-300'>About</p>
+              <p className='cursor-pointer hover:text-gray-300' onClick={scrollToAbout}>About</p>
               <p className='mr-15 cursor-pointer hover:text-gray-300' onClick={() => setPortfolioMode(true)}>Portfolio</p>
             </div>
           </div>
@@ -117,7 +123,7 @@ const Landing = () => {
       </AnimatePresence>
 
       {/* SECOND SECTION: About Us (No Touch) */}
-      <div className='w-screen h-screen flex flex-col justify-evenly items-center'
+      <div ref={aboutRef} className='w-screen h-screen flex flex-col justify-evenly items-center'
         style={{background: "linear-gradient(119deg,rgba(5, 0, 0, 1) 0%, rgba(59, 11, 107, 1) 21%, rgba(60, 15, 94, 1) 42%, rgba(92, 41, 82, 1) 47%, rgba(125, 27, 27, 1) 52%, rgba(105, 29, 21, 1) 68%, rgba(66, 9, 5, 1) 82%, rgba(5, 0, 0, 1) 99%)"}}
       >
         <h1 className='text-white text-5xl font-Mooli font-bold'>About US</h1>
