@@ -390,9 +390,12 @@ const Shiva = () => {
                     <div className='w-full h-40 flex flex-row justify-evenly items-center'>
                         <FaLinkedin 
                         className='rounded-xl cursor-pointer bg-white text-blue-500 text-8xl'
-                        onClick={() => Navigate("")}
+                        onClick={() => window.open("https://www.linkedin.com/in/shiva-shiva-8a48002a7", "_blank")}
                         />
-                        <FaGithub className='rounded-full cursor-pointer text-black bg-white text-8xl'/>
+                        <FaGithub 
+                        className='rounded-full cursor-pointer text-black bg-white text-8xl'
+                        onClick={() => window.open("https://github.com/shivakumar2006", "_blank")}
+                        />
                         <FaYoutube 
                         className='rounded-xl cursor-pointer h-18 bg-white text-red-500 text-8xl'
                         onClick={() => window.open("https://www.youtube.com/@shivakumar2006-j", "_blank")}
