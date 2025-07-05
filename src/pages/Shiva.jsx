@@ -389,15 +389,15 @@ const Shiva = () => {
                 <div className='w-180 flex flex-col jusitfy-center items-center'>
                     <div className='w-full h-40 flex flex-row justify-evenly items-center'>
                         <FaLinkedin 
-                        className='rounded-xl cursor-pointer bg-white text-blue-500 text-8xl'
+                        className='rounded-xl cursor-pointer bg-white text-blue-500 text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_10px_#fff]'
                         onClick={() => window.open("https://www.linkedin.com/in/shiva-shiva-8a48002a7", "_blank")}
                         />
                         <FaGithub 
-                        className='rounded-full cursor-pointer text-black bg-white text-8xl'
+                        className='rounded-full cursor-pointer text-black bg-white text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
                         onClick={() => window.open("https://github.com/shivakumar2006", "_blank")}
                         />
                         <FaYoutube 
-                        className='rounded-xl cursor-pointer h-18 bg-white text-red-500 text-8xl'
+                        className='rounded-xl cursor-pointer h-18 bg-white text-red-500 text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
                         onClick={() => window.open("https://www.youtube.com/@shivakumar2006-j", "_blank")}
                         />
                     </div>
