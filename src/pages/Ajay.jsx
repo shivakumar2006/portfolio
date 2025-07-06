@@ -443,7 +443,7 @@ const Ajay = () => {
                     <div className='w-full h-40 flex flex-row justify-evenly items-center'>
                                             <FaLinkedin 
                                             className='rounded-xl cursor-pointer bg-white text-blue-500 text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_10px_#fff]'
-                                            onClick={() => window.open("https://www.linkedin.com/in/shiva-shiva-8a48002a7", "_blank")}
+                                            onClick={() => window.open("https://www.linkedin.com/in/ajay-kumar-15498a80/", "_blank")}
                                             />
                                             <FaGithub 
                                             className='rounded-full cursor-pointer text-black bg-white text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
