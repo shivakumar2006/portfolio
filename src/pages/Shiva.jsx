@@ -270,7 +270,7 @@ const Shiva = () => {
         {/* skills */}
         <div 
             ref={skillRef}
-            className='w-full h-screen bg-pink-500'
+            className=' w-full min-h-screen'
             // style={{background: "linear-gradient(203deg,rgba(0, 0, 0, 1) 0%, rgba(23, 1, 10, 1) 17%, rgba(38, 2, 2, 1) 30%, rgba(22, 3, 43, 1) 60%, rgba(34, 30, 56, 1) 89%, rgba(0, 0, 0, 1) 100%)"}}
             style={{background: "linear-gradient(171deg,rgba(23, 4, 48, 1) 0%, rgba(16, 3, 31, 1) 100%)"}}
         >
@@ -297,6 +297,17 @@ const Shiva = () => {
                 </motion.div>
                 ))}
             </div>
+            {/* End of Skills Section */}
+            {/* <div className="wave-container">
+              <svg viewBox="0 0 1440 320" className="wave">
+                <path
+                  fill="#360f4d"  
+                  fillOpacity="1"
+                  d="M0,192L60,176C120,160,240,128,360,138.7C480,149,600,203,720,208C840,213,960,171,1080,160C1200,149,1320,171,1380,181.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+                ></path>
+              </svg>
+            </div> */}
+
             </div>
             
         {/* projects */}
