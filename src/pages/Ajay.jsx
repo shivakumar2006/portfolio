@@ -149,12 +149,36 @@ const Ajay = () => {
             link: "https://www.cloudskillsboost.google/public_profiles/2b760d2f-02f7-4e36-8d73-0b8a1d7ab2e5/badges/6903277?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
         },
         {
-            name: "Go: The Complete Developer's GUide (Golang)",
+            name: "Go: The Complete<br /> Developer's GUide<br /> (Golang)",
             provider: "Udemy",
             issue: "Issued may 2023",
-            credentials: "Credential ID UC-70431949-c66d-4f91-a836-9b7d34cbfdaf",
+            credentials: "Credential ID UC-70431949<br />-c66d-4f91-a836-9b7d34cbfdaf",
             logo: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg",
-            link: "https://www.cloudskillsboost.google/public_profiles/2b760d2f-02f7-4e36-8d73-0b8a1d7ab2e5/badges/6903277?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+            link: "https://www.udemy.com/certificate/UC-70431949-c66d-4f91-a836-9b7d34cbfdaf/"
+        },
+        {
+            name: "AZ-104 Microsoft Azure <br />Administrator Certification<br /> 2022",
+            provider: "Udemy",
+            issue: "Issued nov 2022",
+            credentials: "Credential ID UC-47b4c08c-<br />8ec0-49d8-be1e-65c6b359ebf7",
+            logo: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg",
+            link: "https://www.udemy.com/certificate/UC-47b4c08c-8ec0-49d8-be1e-65c6b359ebf7/"
+        },
+        {
+            name: "Microsoft Certified:<br /> Azure Fundamentals",
+            provider: "Microsoft",
+            issue: "Issued oct 2022",
+            credentials: "",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+            link: "https://www.credly.com/badges/ded2bbe7-495f-48c3-86ff-ce3a82490ebf/linked_in_profile"
+        },
+        {
+            name: "Microsoft Certified:<br /> Azure Administrator<br /> Associate",
+            provider: "Microsoft",
+            issue: "Issued oct 2022",
+            credentials: "",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+            link: "https://www.credly.com/badges/a1769e09-ad68-4444-8822-8edf6b3124f2/linked_in_profile"
         },
     ]
 
@@ -357,7 +381,7 @@ const Ajay = () => {
             {/* certificate */}
             <div className='w-full h-120 flex flex-col justify-center items-center'>
                 <p className='text-white mr-245 mb-10 text-6xl'>Certificate</p>
-                <div className='w-320 h-70 overflow-x-auto whitespace-nowrap scroll-smooth flex flex-row justify-evenly items-center gap-5'>
+                <div className='w-320 h-70 overflow-x-auto whitespace-nowrap scroll-smooth flex flex-row justify-evenly items-center gap-7'>
                     {certificate?.map((item, index) => (
                     <div key={index} className='w-120 h-70 bg-white rounded-2xl flex flex-col'>
                         <div className='w-120 h-35 flex flex-row justify-evenly items-center'>
@@ -367,14 +391,14 @@ const Ajay = () => {
                                     className='w-full h-full'
                                 />
                             </div>
-                            <div className='w-80 ml-16 h-35 text-gray-500 flex flex-col justify-center items-center gap-5'>
-                                <p>{item.issue}</p>
-                                <p>{item.credentials}</p>
+                            <div className='w-80 ml-16 min-h-35 text-gray-500 flex flex-col justify-center items-center gap-5 break-words'>
+                                <p className='leading-snug'>{item.issue}</p>
+                                <p className='leading-snug text-center' dangerouslySetInnerHTML={{ __html: item.credentials }}></p>
                             </div>
                         </div>
                         <div className='w-120 h-35 flex flex-row justify-center items-center'>
                             <div className='w-60 h-35 flex flex-col justify-center items-center gap-5'>
-                                <p className='font-bold text-xl'>{item.name}</p>
+                                <p className='leading-snug text-center' dangerouslySetInnerHTML={{ __html: item.name }}></p>
                                 <p className='text-[15px]'>{item.provider}</p>
                             </div>
                             <div className='w-60 h-35 flex flex-col justify-center items-center'>
