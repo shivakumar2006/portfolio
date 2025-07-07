@@ -13,6 +13,8 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
+import { CiShare1 } from "react-icons/ci";
+
 
 
 const Ajay = () => {
@@ -126,6 +128,33 @@ const Ajay = () => {
             description: "Crypto App is a sleek and responsive cryptocurrency tracking app built with React, TailwindCSS, Ant Design, and CryptoRanking API via RapidAPI. It displays real-time data on top coins, prices, market trends, and more—perfect for learning API integration and UI libraries.",
             video: crypto,
             link: "https://shivacrypto.netlify.app/"
+        },
+    ]
+
+    const certificate = [
+        {
+            name: "Generative AI Explorer",
+            provider: "Google",
+            issue: "Issued jan 2024",
+            credentials: "Credential ID 6909987",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
+            link: "https://www.cloudskillsboost.google/public_profiles/2b760d2f-02f7-4e36-8d73-0b8a1d7ab2e5/badges/6909987?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+        },
+        {
+            name: "Vertex AI",
+            provider: "Google",
+            issue: "Issued jan 2024",
+            credentials: "Credential ID 6903277",
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
+            link: "https://www.cloudskillsboost.google/public_profiles/2b760d2f-02f7-4e36-8d73-0b8a1d7ab2e5/badges/6903277?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+        },
+        {
+            name: "Go: The Complete Developer's GUide (Golang)",
+            provider: "Udemy",
+            issue: "Issued may 2023",
+            credentials: "Credential ID UC-70431949-c66d-4f91-a836-9b7d34cbfdaf",
+            logo: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg",
+            link: "https://www.cloudskillsboost.google/public_profiles/2b760d2f-02f7-4e36-8d73-0b8a1d7ab2e5/badges/6903277?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
         },
     ]
 
@@ -324,6 +353,45 @@ const Ajay = () => {
                 </motion.div>
                 ))}
             </div>
+
+            {/* certificate */}
+            <div className='w-full h-120 flex flex-col justify-center items-center'>
+                <p className='text-white mr-245 mb-10 text-6xl'>Certificate</p>
+                <div className='w-320 h-70 overflow-x-auto whitespace-nowrap scroll-smooth flex flex-row justify-evenly items-center gap-5'>
+                    {certificate?.map((item, index) => (
+                    <div key={index} className='w-120 h-70 bg-white rounded-2xl flex flex-col'>
+                        <div className='w-120 h-35 flex flex-row justify-evenly items-center'>
+                            <div className='w-30 ml-15 h-25'>
+                                <img 
+                                    src={item.logo}
+                                    className='w-full h-full'
+                                />
+                            </div>
+                            <div className='w-80 ml-16 h-35 text-gray-500 flex flex-col justify-center items-center gap-5'>
+                                <p>{item.issue}</p>
+                                <p>{item.credentials}</p>
+                            </div>
+                        </div>
+                        <div className='w-120 h-35 flex flex-row justify-center items-center'>
+                            <div className='w-60 h-35 flex flex-col justify-center items-center gap-5'>
+                                <p className='font-bold text-xl'>{item.name}</p>
+                                <p className='text-[15px]'>{item.provider}</p>
+                            </div>
+                            <div className='w-60 h-35 flex flex-col justify-center items-center'>
+                                <button 
+                                    className='w-50 h-10 border rounded-full flex flex-row justify-center items-center gap-5 hover:border-2 cursor-pointer'
+                                    onClick={() => window.open(item.link, "_blank")}    
+                                >
+                                    <p className='font-bold'>Show Credential</p>
+                                    <CiShare1 className=''/>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    ))}
+                    
+                </div>
+            </div>
             </div>
             
         {/* projects */}
@@ -441,30 +509,30 @@ const Ajay = () => {
             <div className='w-full mt-10 flex flex-row justify-center items-center'>
                 <div className='w-180 flex flex-col jusitfy-center items-center'>
                     <div className='w-full h-40 flex flex-row justify-evenly items-center'>
-                                            <FaLinkedin 
-                                            className='rounded-xl cursor-pointer bg-white text-blue-500 text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_10px_#fff]'
-                                            onClick={() => window.open("https://www.linkedin.com/in/ajay-kumar-15498a80/", "_blank")}
-                                            />
-                                            <FaGithub 
-                                            className='rounded-full cursor-pointer text-black bg-white text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
-                                            onClick={() => window.open("https://github.com/shivakumar2006", "_blank")}
-                                            />
-                                            <FaYoutube 
-                                            className='rounded-xl cursor-pointer h-18 bg-white text-red-500 text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
-                                            onClick={() => window.open("https://www.youtube.com/@shivakumar2006-j", "_blank")}
-                                            />
-                                        </div>
-                                        <div className='w-150 mt-20 text-3xl h-20 text-center'>
-                                            <p className='text-white'>"Code hard. Train hard. Stay real. If you’ve got a project, a vision, or just some fire to share — I’m listening."</p>
-                                        </div>
-                    
-                                        <a
-                                          href="/resume.pdf"
-                                          download="resume.pdf"
-                                          className="flex items-center mt-20 gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-semibold hover:scale-105 transition-transform duration-300"
-                                        >
-                                          <FaDownload /> Download CV
-                                        </a>
+                        <FaLinkedin 
+                        className='rounded-xl cursor-pointer bg-white text-blue-500 text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_10px_#fff]'
+                        onClick={() => window.open("https://www.linkedin.com/in/ajay-kumar-15498a80/", "_blank")}
+                        />
+                        <FaGithub 
+                        className='rounded-full cursor-pointer text-black bg-white text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
+                        onClick={() => window.open("https://github.com/shivakumar2006", "_blank")}
+                        />
+                        <FaYoutube 
+                        className='rounded-xl cursor-pointer h-18 bg-white text-red-500 text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
+                        onClick={() => window.open("https://www.youtube.com/@shivakumar2006-j", "_blank")}
+                        />
+                    </div>
+                    <div className='w-150 mt-20 text-3xl h-20 text-center'>
+                        <p className='text-white'>"Code hard. Train hard. Stay real. If you’ve got a project, a vision, or just some fire to share — I’m listening."</p>
+                    </div>
+
+                    <a
+                      href="/resume.pdf"
+                      download="resume.pdf"
+                      className="flex items-center mt-20 gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-semibold hover:scale-105 transition-transform duration-300"
+                    >
+                      <FaDownload /> Download CV
+                    </a>
                 </div>
                 <div className='w-180 flex flex-col jusitfy-center items-center'>
                     <form 
