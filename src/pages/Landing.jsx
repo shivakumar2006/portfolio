@@ -26,7 +26,7 @@ const Landing = () => {
         className="landing relative z-0"
       >
         {/* Navbar */}
-        <div className='w-full border-2 flex flex-row justify-between items-center pt-5 pl-10'>
+        <div className='w-full border-2 flex flex-row justify-between items-center pt-5 pl-10 gap-10'>
           <p className='text-2xl font-bold text-white flex flex-row justify-center items-center cursor-pointer transition-transform duration-500 hover:scale-110'>
             ViSi<FaEarthAmericas className='font-bold' />nAries
           </p>
@@ -44,7 +44,7 @@ const Landing = () => {
         </div>
 
         {/* Ajay & Shiva Circles */}
-        <div className='w-full h-80 mt-30 flex flex-row justify-evenly items-center'>
+        <div className='w-full min-h-80  mt-30 flex flex-row sm:flex-row justify-evenly items-center gap-5'>
           <div className='w-80 h-80 bg-white/10 border border-white/30 shadow-white/50 shadow-xl/30 hover:bg-white/30 transition-all duration-500 rounded-full flex justify-center items-center overflow-hidden'>
             <img src={ajay} className='w-80 h-80 ' />
           </div>
@@ -122,12 +122,13 @@ const Landing = () => {
         )}
       </AnimatePresence>
 
+
       {/* SECOND SECTION: About Us (No Touch) */}
-      <div ref={aboutRef} className='w-screen h-screen flex flex-col justify-evenly items-center'
+      <div ref={aboutRef} className='sm:w-screen w-[680px] min-h-screen flex flex-col justify-evenly items-center'
         style={{background: "linear-gradient(119deg,rgba(5, 0, 0, 1) 0%, rgba(59, 11, 107, 1) 21%, rgba(60, 15, 94, 1) 42%, rgba(92, 41, 82, 1) 47%, rgba(125, 27, 27, 1) 52%, rgba(105, 29, 21, 1) 68%, rgba(66, 9, 5, 1) 82%, rgba(5, 0, 0, 1) 99%)"}}
       >
-        <h1 className='text-white text-5xl font-Mooli font-bold'>About US</h1>
-        <div className='w-250 h-120 bg-white/10 rounded-xl flex justify-center items-center'>
+        <h1 className='text-white mt-10 mb-10 text-5xl font-Mooli font-bold'>About US</h1>
+        <div className='sm:w-[250px] w-[550px] min-h-120 bg-white/10 rounded-xl flex justify-center items-center'>
           <p className='font-mooli text-2xl shadow-xl text-white text-center'>
             We are a mentor-mentee duo driven by learning, building, and growth.<br />
             I’m a college student passionate about development,<br />
@@ -137,8 +138,7 @@ const Landing = () => {
             Together, we believe in sharing knowledge, writing clean code, and turning ideas into meaningful experiences.
           </p>
         </div>
-        <button className='btn-grad'
-          style={{}}
+        <button className='btn-grad mb-5'
         >
           Portfolio
         </button>
