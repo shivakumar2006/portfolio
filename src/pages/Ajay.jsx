@@ -24,6 +24,7 @@ const Ajay = () => {
     const projectRef = useRef(null);
     const contactRef = useRef(null);
     const homeRef = useRef(null);
+    const certificateRef = useRef(null);
     const formRef = useRef();
     const isInView = useInView(aboutRef, { margin: "-100px"});
     const controls = useAnimation();
@@ -50,6 +51,11 @@ const Ajay = () => {
         homeRef.current?.scrollIntoView({ behavior: 'smooth'})
     }
 
+    const scrollToCertificate = () => {
+        certificateRef.current?.scrollIntoView({ behavior: 'smooth'})
+    }
+
+
 
     useEffect(() => {
         if (isInView) {
@@ -58,6 +64,7 @@ const Ajay = () => {
             controls.start({ opacity: 0, y: 100}) // reset when out of view
         }
     }, [isInView, controls])
+
 
     const sendEmail = (e) => {
         e.preventDefault(),
@@ -181,6 +188,28 @@ const Ajay = () => {
             link: "https://www.credly.com/badges/a1769e09-ad68-4444-8822-8edf6b3124f2/linked_in_profile"
         },
     ]
+
+    // const visibleCertificate = certificate.slice(0, 6);
+
+    // const duplicate = [...visibleCertificate, ...visibleCertificate];
+
+    // const repeatCertificates = [...certificate, ...certificate, ...certificate];
+
+    // useEffect(() => {
+    //     const loop = async () => {
+    //         while (true) {
+    //             await cont.start({
+    //                 x: "-100%",
+    //                 transition: {
+    //                     duration: 30,
+    //                     ease: "linear",
+    //                 }
+    //             });
+    //             await controls.set({ x: 0 })
+    //         }
+    //     }
+    //     loop();
+    // }, [cont])
 
   return (
     <>
@@ -308,8 +337,8 @@ const Ajay = () => {
             <div className='h-30 border border-red-500'></div>
             <div className='w-4 h-4 bg-red-900 rounded-full'></div>
             <div className='w-2 h-2 pt-5 bg-white rounded-full'></div>
-            <div className='h-51 border border-white'></div>
-            <div className='w-2 h-2 pt-5 bg-white rounded-full'></div>
+            <div className='h-35 border border-white'></div>
+            <div className='w-2 h-2 pt-5 mb-5 bg-white rounded-full'></div>
         </div>
         <div className='w-120 ml-20 h-170 text-white flex flex-col justify-center items-center'>
             <p className='font-bold text-xl mr-50'>Senior Software Engineer</p>
@@ -379,11 +408,23 @@ const Ajay = () => {
             </div>
 
             {/* certificate */}
-            <div className='w-full h-120 flex flex-col justify-center items-center'>
+            <div ref={certificateRef} className='w-full h-120 flex flex-col justify-center items-center'>
                 <p className='text-white mr-245 mb-10 text-6xl'>Certificate</p>
                 <div className='w-320 h-70 overflow-x-auto whitespace-nowrap scroll-smooth flex flex-row justify-evenly items-center gap-7'>
+      {/* <motion.div
+        className="flex gap-6"
+        animate={{
+          x: ["0%", "-50%", "0%"], // left, then right, then back
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "easeInOut",
+        }}
+      > */}
                     {certificate?.map((item, index) => (
-                    <div key={index} className='w-120 h-70 bg-white rounded-2xl flex flex-col'>
+                    <div key={index} className='w-120 h-70 bg-white rounded-2xl flex flex-col transition-tranform duration-300 ease-in-out hover:scale-101'>
                         <div className='w-120 h-35 flex flex-row justify-evenly items-center'>
                             <div className='w-30 ml-15 h-25'>
                                 <img 
@@ -413,7 +454,7 @@ const Ajay = () => {
                         </div>
                     </div>
                     ))}
-                    
+                     {/* </motion.div> */}
                 </div>
             </div>
             </div>
@@ -546,14 +587,16 @@ const Ajay = () => {
                         onClick={() => window.open("https://www.youtube.com/@shivakumar2006-j", "_blank")}
                         />
                     </div>
-                    <div className='w-150 mt-20 text-3xl h-20 text-center'>
-                        <p className='text-white'>"Code hard. Train hard. Stay real. If you’ve got a project, a vision, or just some fire to share — I’m listening."</p>
+                    <div className='w-150 mt-10 text-3xl h-20 text-center'>
+                        <p className='text-white'>Great code solves real problems. Great teams build with trust.
+With experience, you learn — it’s less about the tools and more about the mindset.
+Have something worth building? Let’s connect.</p>
                     </div>
 
                     <a
                       href="/resume.pdf"
                       download="resume.pdf"
-                      className="flex items-center mt-20 gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-semibold hover:scale-105 transition-transform duration-300"
+                      className="flex items-center mt-35 gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-semibold hover:scale-105 transition-transform duration-300"
                     >
                       <FaDownload /> Download CV
                     </a>
@@ -608,10 +651,11 @@ const Ajay = () => {
             <div className='w-full h-20 mt-5 rounded-t-3xl bg-white/10 flex flex-row'>
                 <div className='w-full h-15 text-white text-2xl ml-10 mt-3 flex flex-row justify-evenly items-center gap-10'>
                     <p className='mr-50'>Ajay Kumar</p>
-                    <div className='w-100 h-10 rounded-3xl hover:bg-black/30 text-[15px] bg-black/10 text-white flex flex-row justify-evenly items-center'>
+                    <div className='w-120 h-10 rounded-3xl hover:bg-black/30 text-[15px] bg-black/10 text-white flex flex-row justify-evenly items-center'>
                         <p className='cursor-pointer' onClick={ScrollToHome}>Home</p>
                         <p  className='cursor-pointer' onClick={scrollToAbout}>About</p>
                         <p  className='cursor-pointer' onClick={scrollToSkills}>Skills</p>
+                        <p  className='cursor-pointer' onClick={scrollToCertificate}>Certificate</p>
                     </div>
                     <p className='text-[13px] ml-50'>official.shivakumar06@gmail.com</p>
                 </div>
