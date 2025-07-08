@@ -1,7 +1,7 @@
 import React from "react"; 
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Landing from "./pages/landing";
+import Landing from "./pages/Landing";
 import Shiva from "./pages/Shiva";
 import Ajay from "./pages/Ajay";
 
