@@ -128,7 +128,7 @@ const Landing = () => {
         style={{background: "linear-gradient(119deg,rgba(5, 0, 0, 1) 0%, rgba(59, 11, 107, 1) 21%, rgba(60, 15, 94, 1) 42%, rgba(92, 41, 82, 1) 47%, rgba(125, 27, 27, 1) 52%, rgba(105, 29, 21, 1) 68%, rgba(66, 9, 5, 1) 82%, rgba(5, 0, 0, 1) 99%)"}}
       >
         <h1 className='text-white mt-10 mb-10 text-5xl font-Mooli font-bold'>About US</h1>
-        <div className='sm:w-[250px] w-[550px] min-h-120 bg-white/10 rounded-xl flex justify-center items-center'>
+        <div className='sm:w-280 w-[550px] min-h-120 bg-white/10 rounded-xl flex justify- items-center'>
           <p className='font-mooli text-2xl shadow-xl text-white text-center'>
             We are a mentor-mentee duo driven by learning, building, and growth.<br />
             I’m a college student passionate about development,<br />
