@@ -648,16 +648,16 @@ Have something worth building? Let’s connect.</p>
                     </form>
                 </div>
             </div>
-            <div className='w-full h-20 mt-5 rounded-t-3xl bg-white/10 flex flex-row'>
-                <div className='w-full h-15 text-white md:text-2xl text-sm ml-10 mt-3 flex flex-row justify-evenly items-center gap-10'>
-                    <p className='mr-50'>Ajay Kumar</p>
-                    <div className='w-120 h-10 rounded-3xl hover:bg-black/30 text-[15px] bg-black/10 text-white flex flex-row justify-evenly items-center'>
+            <div className='md:w-full w-[410px] h-30 mt-5 rounded-t-3xl bg-white/10 flex md:flex-row felx-col justify-center items-center'>
+                <div className='md:w-full w-[410px] h-15 text-white md:text-2xl text-sm ml-10 mt-3 flex md:flex-row flex-col md:justify-center justify-center items-center md:gap-10 gap-3'>
+                    <p className='md:mr-50 mr-5 text-center'>Ajay Kumar</p>
+                    <div className='md:w-120 md:h-10 w-100 mr-10 h-15 rounded-3xl hover:bg-black/30 text-[15px] bg-black/10 text-white flex flex-row justify-evenly items-center gap-5'>
                         <p className='cursor-pointer' onClick={ScrollToHome}>Home</p>
                         <p  className='cursor-pointer' onClick={scrollToAbout}>About</p>
                         <p  className='cursor-pointer' onClick={scrollToSkills}>Skills</p>
                         <p  className='cursor-pointer' onClick={scrollToCertificate}>Certificate</p>
                     </div>
-                    <p className='text-[13px] ml-50'>official.shivakumar06@gmail.com</p>
+                    <p className='text-[13px] md:ml-50 mr-8 '>official.shivakumar06@gmail.com</p>
                 </div>
             </div>
         </div>
