@@ -323,7 +323,7 @@ const Ajay = () => {
               className='w-full h-full object-contain absolute shadow-black top-0 left-0 z-20 drop-shadow-2xl'
             />
         </div>
-        <div className='w-110 h-50 mt-120 rounded-full bg-black z-30 flex justify-center items-center text-white text-4xl font-extrabold'>
+        <div className='md:w-110 md:h-50 w-80 h-30 mt-120 rounded-full bg-black z-30 flex justify-center items-center text-white text-4xl font-extrabold'>
             <p className='pb-20'></p>
         </div>
     </div>
@@ -424,7 +424,7 @@ const Ajay = () => {
         }}
       > */}
                     {certificate?.map((item, index) => (
-                    <div key={index} className='md:w-120 md:h-70 h-70 bg-white rounded-2xl flex flex-col transition-tranform duration-300 ease-in-out hover:scale-101'>
+                    <div key={index} className='md:w-120 md:h-70  h-70 bg-white rounded-2xl flex flex-col transition-tranform duration-300 ease-in-out hover:scale-101'>
                         <div className='w-120 h-35 flex flex-row justify-evenly items-center'>
                             <div className='w-30 ml-15 h-25'>
                                 <img 
