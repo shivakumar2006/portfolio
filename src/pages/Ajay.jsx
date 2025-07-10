@@ -213,8 +213,8 @@ const Ajay = () => {
 
   return (
     <>
-    <div ref={homeRef} className='sm:w-screen w-[410px] min-h-screen bg-black flex flex-row justify-center items-center'>
-    <div className='magicpattern w-full overflow-x-hidden rounded-4xl md:min-h-full'>
+    <div ref={homeRef} className='w-full min-w-[480px] mx-auto min-h-screen bg-black flex flex-row justify-center items-center'>
+    <div className='magicpattern rounded-4xl'>
         {/* Navbar */}
         <div className='w-full flex md:flex-row flex-col justify-between items-center md:pt-5 pl-10 gap-3'>
           <p className='md:text-3xl mt-5 text-sm mr-10 font-extrabold text-black flex flex-row justify-center items-center cursor-pointer transition-transform duration-500 hover:scale-110'>
@@ -273,12 +273,12 @@ const Ajay = () => {
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className='w-150 h-140 flex mt-[-50px] justify-center items-center order-1 md:order-2'
+          className='md:w-150 w-full h-140 flex mt-[-50px] justify-center items-center order-1 md:order-2'
         >
           <img 
             src={ajay}
             alt='ajay'
-            className='md:w-200 w-90 object-contain drop-shadow-2xl'
+            className='md:w-200 w-full object-contain drop-shadow-2xl'
           />
         </motion.div>
       </div>

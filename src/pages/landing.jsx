@@ -32,10 +32,10 @@ const Landing = () => {
           </p>
 
           <div 
-            className='md:w-112 w-60 h-8 md:h-12 bg-red-500 md:mr-10 rounded-3xl flex justify-center items-center'
+            className='md:w-112 w-full h-8 md:h-12 bg-red-500 md:mr-10 rounded-3xl flex justify-center items-center'
             style={{background: "linear-gradient(90deg,rgba(79, 0, 158, 1) 1%, rgba(120, 26, 214, 1) 21%, rgba(181, 107, 255, 1) 42%, rgba(255, 89, 89, 1) 52%, rgba(209, 13, 6, 1) 68%, rgba(133, 0, 0, 1) 99%)"}}
           >
-            <div className='md:w-111 md:h-11 w-58 h-7 text-white font-bold bg-black/80 rounded-3xl flex flex-row md:justify-around justify-center items-center gap-5'>
+            <div className='md:w-111 md:h-11 w-78 h-7 text-white font-bold bg-black/80 rounded-3xl flex flex-row md:justify-around justify-center items-center gap-5'>
               <p className='ml-15 cursor-pointer hover:text-gray-300'>Home</p>
               <p className='cursor-pointer hover:text-gray-300' onClick={scrollToAbout}>About</p>
               <p className='mr-15 cursor-pointer hover:text-gray-300' onClick={() => setPortfolioMode(true)}>Portfolio</p>
@@ -88,7 +88,7 @@ const Landing = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className='absolute top-0 left-0 md:w-full w-[410px] h-[760px] sm:min-h-full z-50 flex flex-col justify-center items-center bg-black/90'
+            className='absolute top-0 left-0 w-full min-w-[480px] mx-auto h-[760px] sm:min-h-full z-50 flex flex-col justify-center items-center bg-black/90'
           >
             <h1 className='text-white text-4xl font-bold mb-6'>Select a Portfolio</h1>
 
@@ -124,11 +124,11 @@ const Landing = () => {
 
 
       {/* SECOND SECTION: About Us (No Touch) */}
-      <div ref={aboutRef} className='md:w-screen w-[410px] min-h-screen flex flex-col justify-evenly items-center'
+      <div ref={aboutRef} className='md:w-screen w-full min-w-[480px] mx-auto min-h-screen flex flex-col justify-evenly items-center'
         style={{background: "linear-gradient(119deg,rgba(5, 0, 0, 1) 0%, rgba(59, 11, 107, 1) 21%, rgba(60, 15, 94, 1) 42%, rgba(92, 41, 82, 1) 47%, rgba(125, 27, 27, 1) 52%, rgba(105, 29, 21, 1) 68%, rgba(66, 9, 5, 1) 82%, rgba(5, 0, 0, 1) 99%)"}}
       >
         <h1 className='text-white mt-10 mb-10 text-5xl font-Mooli font-bold'>About US</h1>
-        <div className='md:w-280 w-[380px] min-h-120 bg-white/10 rounded-xl flex justify- items-center'>
+        <div className='md:w-280 w-[350px] min-h-120 bg-white/10 rounded-xl flex justify- items-center'>
           <p className='font-mooli text-2xl shadow-xl text-white text-center'>
             We are a mentor-mentee duo driven by learning, building, and growth.<br />
             I’m a college student passionate about development,<br />
