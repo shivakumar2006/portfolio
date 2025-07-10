@@ -214,7 +214,7 @@ const Ajay = () => {
   return (
     <>
     <div ref={homeRef} className='sm:w-screen w-[410px] min-h-screen bg-black flex flex-row justify-center items-center'>
-    <div className='magicpattern rounded-4xl md:min-h-full'>
+    <div className='magicpattern w-full overflow-x-hidden rounded-4xl md:min-h-full'>
         {/* Navbar */}
         <div className='w-full flex md:flex-row flex-col justify-between items-center md:pt-5 pl-10 gap-3'>
           <p className='md:text-3xl mt-5 text-sm mr-10 font-extrabold text-black flex flex-row justify-center items-center cursor-pointer transition-transform duration-500 hover:scale-110'>
