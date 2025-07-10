@@ -213,7 +213,7 @@ const Ajay = () => {
 
   return (
     <>
-    <div ref={homeRef} className='w-full min-w-[480px] mx-auto min-h-screen bg-black flex flex-row justify-center items-center'>
+    <div ref={homeRef} className='md:w-screen w-full md:max-w-none mx-auto min-h-screen bg-black flex flex-row justify-center items-center'>
     <div className='magicpattern rounded-4xl'>
         {/* Navbar */}
         <div className='w-full flex md:flex-row flex-col justify-between items-center md:pt-5 pl-10 gap-3'>
@@ -221,10 +221,10 @@ const Ajay = () => {
             Ajay Kumar
           </p>
           <div 
-            className='md:w-160 w-95 mr-10 h-10 bg-red-500 rounded-3xl flex justify-center items-center'
+            className='md:w-160 w-80 mr-10 h-10 bg-red-500 rounded-3xl flex justify-center items-center'
             style={{background: "linear-gradient(90deg,rgba(79, 0, 158, 1) 1%, rgba(120, 26, 214, 1) 21%, rgba(181, 107, 255, 1) 42%, rgba(255, 89, 89, 1) 52%, rgba(209, 13, 6, 1) 68%, rgba(133, 0, 0, 1) 99%)"}}
           >
-            <div className='md:w-159 w-93 h-9 text-white font-bold bg-black rounded-3xl flex flex-row justify-center items-center md:gap-17 gap-5'>
+            <div className='md:w-159 w-79 h-9 text-white text-[13px] md:text-lg font-bold bg-black rounded-3xl flex flex-row justify-center items-center md:gap-17 gap-5'>
               <p className='ml-0 cursor-pointer hover:text-gray-300'
                 onClick={() => Navigate("/")}
               >Home</p>
