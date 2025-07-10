@@ -246,8 +246,8 @@ const Ajay = () => {
           transition={{ duration: 1, ease: 'easeOut' }}
           className='md:w-180 md:h-140 pb-10 flex flex-col justify-center items-center order-2 md:order-1'
         >
-          <h1 className='md:text-8xl text-6xl md:ml-[-120px] mt-[-60px] font-extrabold'>Ajay Kumar</h1>
-          <p className='md:text-4xl text-2xl font-extrabold mt-5 md:ml-7 ml-8 text-gray-500'>
+          <h1 className='md:text-8xl text-6xl md:ml-[-120px] mt-[-60px] ml-5 font-extrabold'>Ajay Kumar</h1>
+          <p className='md:text-4xl text-2xl font-extrabold mt-5 md:ml-7 ml-5 text-gray-500'>
             Senior Software Engineer at @Victoria's Secret | ex @Verizon, @TechMahindra
           </p>
           <p className='text-gray-500 mt-7 md:ml-7 ml-3 text-xl'>
@@ -294,7 +294,7 @@ const Ajay = () => {
     {/* about me */}
     <motion.div 
         ref={aboutRef}
-        className='md:w-screen w-[410px] min-h-screen bg-black flex justify-center items-center'
+        className='md:w-screen w-full md:max-w-none mx-auto min-h-screen bg-black flex justify-center items-center'
         // style={{background: "linear-gradient(171deg,rgba(23, 4, 48, 1) 0%, rgba(16, 3, 31, 1) 100%)"}}
         initial={{ opacity: 0, y: 100 }}
         animate={controls}
@@ -340,7 +340,7 @@ const Ajay = () => {
             <div className='h-35 border border-white'></div>
             <div className='w-2 h-2 pt-5 mb-5 bg-white rounded-full'></div>
         </div>
-        <div className='w-120 ml-20 h-170 text-white flex flex-col justify-center items-center'>
+        <div className='w-120 md:ml-20 mr-2 ml-5 h-170 text-white flex flex-col justify-center items-center'>
             <p className='font-bold text-xl mr-50'>Senior Software Engineer</p>
             <p className='font-extralight text-[14px] mr-65'>Victoria's Secret - Full-time</p>
             <p className='font-extralight text-gray-300 text-[14px] mr-59'>Nov 2021 - Present 3 yrs 9 mos</p>
@@ -379,14 +379,14 @@ const Ajay = () => {
         {/* skills */}
         <div 
             ref={skillRef}
-            className='md:w-full w-[410px] min-h-screen bg-pink-500'
+            className='md:w-screen w-full md:max-w-none mx-auto min-h-screen bg-pink-500'
             // style={{background: "linear-gradient(203deg,rgba(0, 0, 0, 1) 0%, rgba(23, 1, 10, 1) 17%, rgba(38, 2, 2, 1) 30%, rgba(22, 3, 43, 1) 60%, rgba(34, 30, 56, 1) 89%, rgba(0, 0, 0, 1) 100%)"}}
             style={{background: "linear-gradient(171deg,rgba(23, 4, 48, 1) 0%, rgba(16, 3, 31, 1) 100%)"}}
         >
             <div className='w-full text-white text-6xl font-extrabold flex justify-center items-center pt-20'>
                     My Skills
             </div>
-            <div className='md:w-full  min-h-screen mt-20 md:ml-[-40px] ml-[-100px] flex flex-wrap justify-center items-center overflow-visible'>
+            <div className='md:w-screen min-h-screen mt-20 md:ml-[-30px] ml-[-100px] flex flex-wrap justify-center items-center overflow-visible'>
                 {skills?.map((item, index) => (
                 <motion.div 
                   key={index}
@@ -408,9 +408,9 @@ const Ajay = () => {
             </div>
 
             {/* certificate */}
-            <div ref={certificateRef} className='md:w-full w-[410px] min-h-120 mt-10 md:mt-0 flex flex-col justify-center items-center'>
+            <div ref={certificateRef} className='md:w-screen w-full md:max-w-none mx-auto min-h-120 mt-10 md:mt-0 flex flex-col justify-center items-center'>
                 <p className='text-white md:mr-245 mb-10 text-6xl'>Certificate</p>
-                <div className='md:w-320 md:h-70 w-[370px] h-70 overflow-x-auto whitespace-nowrap scroll-smooth flex flex-row justify-evenly items-center gap-7'>
+                <div className='md:w-320 md:h-70 w-[330px] h-68 overflow-x-auto whitespace-nowrap scroll-smooth flex flex-row justify-evenly items-center gap-7'>
       {/* <motion.div
         className="flex gap-6"
         animate={{
@@ -424,7 +424,7 @@ const Ajay = () => {
         }}
       > */}
                     {certificate?.map((item, index) => (
-                    <div key={index} className='md:w-120 md:h-70  h-70 bg-white rounded-2xl flex flex-col transition-tranform duration-300 ease-in-out hover:scale-101'>
+                    <div key={index} className='md:w-120 md:h-70 h-68 bg-white rounded-2xl flex flex-col transition-tranform duration-300 ease-in-out hover:scale-101'>
                         <div className='w-120 h-35 flex flex-row justify-evenly items-center'>
                             <div className='w-30 ml-15 h-25'>
                                 <img 
@@ -460,14 +460,14 @@ const Ajay = () => {
             </div>
             
         {/* projects */}
-        <div ref={projectRef} className='md:w-full w-[410px] min-h-screen'
+        <div ref={projectRef} className='md:w-screen w-full md:max-w-none mx-auto min-h-screen'
             style={{background: "linear-gradient(94deg,rgba(5, 0, 8, 1) 0%, rgba(75, 5, 102, 1) 23%, rgba(34, 6, 92, 1) 77%, rgba(0, 0, 0, 1) 100%)"}}
         >
             <div className='w-full text-white font-bold pt-10 pl-15 text-6xl'>
                 My<br />Projects
             </div>
             <div className='w-full min-h-screen flex flex-row md:flex-col gap-5'>
-                <div className='md:w-full w-[10px] flex flex-col justify-evenly pt-20 items-center gap-5'>
+                <div className='md:w-full w-[18px] flex flex-col justify-evenly pt-20 items-center gap-5'>
                     {projects?.map((project, index) => {
                         const isEven = index % 2 == 0;
                         const videoRef = useRef(null);
@@ -481,8 +481,8 @@ const Ajay = () => {
                                 videoRef.current.currentTime = 0 // video reset
                             }}
                         >
-                        <div className='md:w-140 md:h-80 w-90 h-50 ml-105 md:ml-0 rounded-2xl bg-white/20'>
-                        <div className='md:w-140 md:h-80 w-90 h-50 ml-0 rounded-2xl bg-black translate-y-4 -translate-x-4 overflow-hidden relative group '>
+                        <div className='md:w-140 md:h-80 w-80 h-45 ml-90 md:ml-0 rounded-2xl bg-white/20'>
+                        <div className='md:w-140 md:h-80 w-80 h-45 ml-0 rounded-2xl bg-black translate-y-4 -translate-x-4 overflow-hidden relative group '>
                           <video 
                             ref={videoRef}
                             src={project.video}
@@ -565,30 +565,30 @@ const Ajay = () => {
         </div>
 
         {/* Contact */}
-        <div ref={contactRef} className='md:w-full w-[410px] min-h-screen'
+        <div ref={contactRef} className='md:w-screen w-full md:max-w-none mx-auto min-h-screen'
             style={{background: "linear-gradient(51deg,rgba(64, 6, 102, 1) 0%, rgba(97, 5, 133, 1) 17%, rgba(7, 1, 10, 1) 69%, rgba(0, 0, 0, 1) 100%)"}}
         >
             <div className='w-full pt-15 md:pl-15 pl-9 text-white text-6xl font-bold'>
                 <p>Contact me</p>
             </div>
             <div className='w-full mt-10 flex md:flex-row flex-col justify-center items-center'>
-                <div className='md:w-180 w-100 flex flex-col jusitfy-center items-center'>
+                <div className='md:w-180 w-90 flex flex-col jusitfy-center items-center'>
                     <div className='w-full h-40 flex flex-row justify-evenly items-center'>
                         <FaLinkedin 
-                        className='rounded-xl cursor-pointer bg-white text-blue-500 text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_10px_#fff]'
+                        className='rounded-xl cursor-pointer bg-white text-blue-500 md:text-8xl text-6xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_10px_#fff]'
                         onClick={() => window.open("https://www.linkedin.com/in/ajay-kumar-15498a80/", "_blank")}
                         />
                         <FaGithub 
-                        className='rounded-full cursor-pointer text-black bg-white text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
+                        className='rounded-full cursor-pointer text-black bg-white md:text-8xl text-6xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
                         onClick={() => window.open("https://github.com/shivakumar2006", "_blank")}
                         />
                         <FaYoutube 
-                        className='rounded-xl cursor-pointer h-18 bg-white text-red-500 text-8xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
+                        className='rounded-xl cursor-pointer h-13 bg-white text-red-500 md:text-8xl text-6xl transition-transform duration-300 hover:scale-110 hover:drop-shadow-[0_0_20px_#fff]'
                         onClick={() => window.open("https://www.youtube.com/@shivakumar2006-j", "_blank")}
                         />
                     </div>
                     <div className='md:w-150 mt-10 md:text-3xl h-20 text-center'>
-                        <p className='text-white text-md'>Great code solves real problems. Great teams build with trust.
+                        <p className='text-white wfull text-[10px] md:text-md'>Great code solves real problems. Great teams build with trust.
 With experience, you learn — it’s less about the tools and more about the mindset.
 Have something worth building? Let’s connect.</p>
                     </div>
