@@ -9,6 +9,9 @@ export default defineConfig({
       fontFamily: {
         mooli: ['Mooli', 'sans-serif'],
       },
+      screen: {
+        'xs': '410px', // for 410px custom breakpoint
+      }
     },
   },
   plugins: [
