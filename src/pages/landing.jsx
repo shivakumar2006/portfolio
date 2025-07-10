@@ -35,7 +35,7 @@ const Landing = () => {
             className='md:w-112 w-full h-8 md:h-12 bg-red-500 md:mr-10 rounded-3xl flex justify-center items-center'
             style={{background: "linear-gradient(90deg,rgba(79, 0, 158, 1) 1%, rgba(120, 26, 214, 1) 21%, rgba(181, 107, 255, 1) 42%, rgba(255, 89, 89, 1) 52%, rgba(209, 13, 6, 1) 68%, rgba(133, 0, 0, 1) 99%)"}}
           >
-            <div className='md:w-111 md:h-11 w-78 h-7 text-white font-bold bg-black/80 rounded-3xl flex flex-row md:justify-around justify-center items-center gap-5'>
+            <div className='md:w-111 md:h-11 w-78 h-7 text-white font-bold bg-black/80 rounded-3xl flex flex-row :justify-around items-center gap-5'>
               <p className='ml-15 cursor-pointer hover:text-gray-300'>Home</p>
               <p className='cursor-pointer hover:text-gray-300' onClick={scrollToAbout}>About</p>
               <p className='mr-15 cursor-pointer hover:text-gray-300' onClick={() => setPortfolioMode(true)}>Portfolio</p>
