@@ -227,7 +227,7 @@ const Ajay = () => {
       "linear-gradient(90deg,rgba(79, 0, 158, 1) 1%, rgba(120, 26, 214, 1) 21%, rgba(181, 107, 255, 1) 42%, rgba(255, 89, 89, 1) 52%, rgba(209, 13, 6, 1) 68%, rgba(133, 0, 0, 1) 99%)",
   }}
 >
-  <div className='lg:w-159 max-[409px]:w-79 min-[410px]:w-92 h-12 text-white text-[13px] lg:text-lg font-bold bg-black rounded-3xl flex flex-row justify-center items-center lg:gap-17 max-[409px]:gap-0 min-[410px]:gap-2'>
+  <div className='lg:w-159 max-[409px]:w-79 min-[410px]:w-92 h-12 text-white text-[13px] lg:text-lg font-bold bg-black rounded-3xl flex flex-row justify-center items-center lg:gap-12 max-[409px]:gap-0 min-[410px]:gap-2'>
     {[
       { label: "Home", onClick: () => Navigate("/") },
       { label: "About", onClick: scrollToAbout },
