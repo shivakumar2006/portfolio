@@ -221,19 +221,31 @@ const Ajay = () => {
             Ajay Kumar
           </p>
           <div 
-            className='lg:w-160 max-[409px]:w-80 min-[410px]:w-93  mr-10 h-10 bg-red-500 rounded-3xl flex justify-center items-center'
-            style={{background: "linear-gradient(90deg,rgba(79, 0, 158, 1) 1%, rgba(120, 26, 214, 1) 21%, rgba(181, 107, 255, 1) 42%, rgba(255, 89, 89, 1) 52%, rgba(209, 13, 6, 1) 68%, rgba(133, 0, 0, 1) 99%)"}}
-          >
-            <div className='lg:w-159 max-[409px]:w-79 min-[410px]:w-92 h-9 text-white text-[13px] lg:text-lg font-bold bg-black rounded-3xl flex flex-row justify-center items-center lg:gap-17 max-[409px]:gap-5 min-[410px]:gap-8'>
-              <p className='ml-0 cursor-pointer hover:text-gray-300'
-                onClick={() => Navigate("/")}
-              >Home</p>
-              <p className='cursor-pointer hover:text-gray-300' onClick={scrollToAbout}>About</p>
-              <p className='cursor-pointer hover:text-gray-300' onClick={scrollToSkills}>Skills</p>
-              <p className='cursor-pointer hover:text-gray-300' onClick={scrollToProject}>Projects</p>
-              <p className='cursor-pointer hover:text-gray-300' onClick={scrollToContact}>Contact</p>
-            </div>
-          </div>
+  className='lg:w-160 max-[409px]:w-80 min-[410px]:w-93 mr-10 h-14 bg-red-500 rounded-3xl flex justify-center items-center z-50'
+  style={{
+    background:
+      "linear-gradient(90deg,rgba(79, 0, 158, 1) 1%, rgba(120, 26, 214, 1) 21%, rgba(181, 107, 255, 1) 42%, rgba(255, 89, 89, 1) 52%, rgba(209, 13, 6, 1) 68%, rgba(133, 0, 0, 1) 99%)",
+  }}
+>
+  <div className='lg:w-159 max-[409px]:w-79 min-[410px]:w-92 h-12 text-white text-[13px] lg:text-lg font-bold bg-black rounded-3xl flex flex-row justify-center items-center lg:gap-17 max-[409px]:gap-5 min-[410px]:gap-2'>
+    {[
+      { label: "Home", onClick: () => Navigate("/") },
+      { label: "About", onClick: scrollToAbout },
+      { label: "Skills", onClick: scrollToSkills },
+      { label: "Projects", onClick: scrollToProject },
+      { label: "Contact", onClick: scrollToContact },
+    ].map(({ label, onClick }) => (
+      <p
+        key={label}
+        className="px-3 py-2 text-center cursor-pointer hover:text-gray-300 whitespace-nowrap"
+        onClick={onClick}
+      >
+        {label}
+      </p>
+    ))}
+  </div>
+</div>
+
         </div>
 
         {/* main */}
@@ -601,11 +613,11 @@ Have something worth building? Let’s connect.</p>
                       <FaDownload /> Download CV
                     </a>
                 </div>
-                <div className='lg:w-180 w-100 flex lg:flex-col flex-row jusitfy-center items-center'>
+                <div className='lg:w-180 max-[409px]:w-93 min-[410px]:w-100 flex lg:flex-col flex-row jusitfy-center items-center'>
                     <form 
                         ref={formRef}
                         onSubmit={sendEmail}
-                        className='lg:w-160 lg:h-140 min-[410px]:w-95 min-[410px]:h-141 max-[409px]:w-85 ml-3 max-[409px]:ml-7 bg-white/10 rounded-3xl flex flex-col'>
+                        className='lg:w-160 lg:h-140 min-[410px]:w-95 min-[410px]:h-141 max-[409px]:w-85 ml-3 max-[409px]:ml-4 bg-white/10 rounded-3xl flex flex-col'>
                         <h1 className='text-white text-3xl text-center mt-10 font-bold'>Get In Touch</h1>
                         <div className='w-full h-18 mt-10 flex flex-row justify-evenly items-center'>
                             <div className='md:w-80 w-47 md:h-18 max-[409px]:ml-2 flex flex-col justify-center items-center gap-3'>
@@ -648,8 +660,8 @@ Have something worth building? Let’s connect.</p>
                     </form>
                 </div>
             </div>
-            <div className='md:w-full max-[409px]:w-90 w-[410px] h-30 mt-5 rounded-t-3xl bg-white/10 flex md:flex-row felx-col justify-center items-center'>
-                <div className='md:w-full w-[410px] h-15 text-white md:text-2xl text-sm ml-10 mt-3 flex md:flex-row flex-col md:justify-center justify-center items-center md:gap-10 gap-3'>
+            <div className='md:w-full max-[409px]:w-90 min-[410px]:w-[410px] h-30 mt-5 rounded-t-3xl bg-white/10 flex md:flex-row felx-col justify-center items-center'>
+                <div className='md:w-full min-[410px]:w-[410px] max-[409px]:w-80 h-15 text-white md:text-2xl text-sm ml-10 mt-3 flex md:flex-row flex-col md:justify-center justify-center items-center md:gap-10 gap-3'>
                     <p className='md:mr-50 mr-5 text-center'>Ajay Kumar</p>
                     <div className='md:w-120 md:h-10 w-100 max-[409px]:w-85 mr-10 h-15 rounded-3xl hover:bg-black/30 text-[15px] bg-black/10 text-white flex flex-row justify-evenly items-center gap-5'>
                         <p className='cursor-pointer' onClick={ScrollToHome}>Home</p>
@@ -657,7 +669,7 @@ Have something worth building? Let’s connect.</p>
                         <p  className='cursor-pointer' onClick={scrollToSkills}>Skills</p>
                         <p  className='cursor-pointer' onClick={scrollToCertificate}>Certificate</p>
                     </div>
-                    <p className='text-[13px] md:ml-50 mr-8 '>official.shivakumar06@gmail.com</p>
+                    <p className='text-[13px] md:ml-50 mr-8 '>radx94ra@gmail.com</p>
                 </div>
             </div>
         </div>
