@@ -213,7 +213,7 @@ const Ajay = () => {
 
   return (
     <>
-    <div ref={homeRef} className='md:w-screen w-full md:max-w-none mx-auto min-h-screen bg-black flex flex-row justify-center items-center'>
+    <div ref={homeRef} className='lg:w-screen w-full lg:max-w-none mx-auto min-h-screen bg-black flex flex-row justify-center items-center'>
     <div className='magicpattern rounded-4xl'>
         {/* Navbar */}
         <div className='w-full flex md:flex-row flex-col justify-between items-center md:pt-5 pl-10 gap-3'>
@@ -221,10 +221,10 @@ const Ajay = () => {
             Ajay Kumar
           </p>
           <div 
-            className='md:w-160 w-80 mr-10 h-10 bg-red-500 rounded-3xl flex justify-center items-center'
+            className='lg:w-160 max-[409px]:w-80 min-[410px]:w-93  mr-10 h-10 bg-red-500 rounded-3xl flex justify-center items-center'
             style={{background: "linear-gradient(90deg,rgba(79, 0, 158, 1) 1%, rgba(120, 26, 214, 1) 21%, rgba(181, 107, 255, 1) 42%, rgba(255, 89, 89, 1) 52%, rgba(209, 13, 6, 1) 68%, rgba(133, 0, 0, 1) 99%)"}}
           >
-            <div className='md:w-159 w-79 h-9 text-white text-[13px] md:text-lg font-bold bg-black rounded-3xl flex flex-row justify-center items-center md:gap-17 gap-5'>
+            <div className='lg:w-159 max-[409px]:w-79 min-[410px]:w-92 h-9 text-white text-[13px] lg:text-lg font-bold bg-black rounded-3xl flex flex-row justify-center items-center lg:gap-17 max-[409px]:gap-5 min-[410px]:gap-8'>
               <p className='ml-0 cursor-pointer hover:text-gray-300'
                 onClick={() => Navigate("/")}
               >Home</p>
@@ -246,7 +246,7 @@ const Ajay = () => {
           transition={{ duration: 1, ease: 'easeOut' }}
           className='md:w-180 md:h-140 pb-10 flex flex-col justify-center items-center order-2 md:order-1'
         >
-          <h1 className='md:text-8xl text-6xl md:ml-[-120px] mt-[-60px] ml-5 font-extrabold'>Ajay Kumar</h1>
+          <h1 className='lg:text-8xl text-6xl lg:ml-[-120px] mt-[-60px] max-[409px]:ml-5 font-extrabold'>Ajay Kumar</h1>
           <p className='md:text-4xl text-2xl font-extrabold mt-5 md:ml-7 ml-5 text-gray-500'>
             Senior Software Engineer at @Victoria's Secret | ex @Verizon, @TechMahindra
           </p>
@@ -460,13 +460,13 @@ const Ajay = () => {
             </div>
             
         {/* projects */}
-        <div ref={projectRef} className='md:w-screen w-full md:max-w-none mx-auto min-h-screen'
+        <div ref={projectRef} className='lg:w-screen w-full lg:max-w-none mx-auto min-h-screen'
             style={{background: "linear-gradient(94deg,rgba(5, 0, 8, 1) 0%, rgba(75, 5, 102, 1) 23%, rgba(34, 6, 92, 1) 77%, rgba(0, 0, 0, 1) 100%)"}}
         >
             <div className='w-full text-white font-bold pt-10 pl-15 text-6xl'>
                 My<br />Projects
             </div>
-            <div className='w-full min-h-screen flex flex-row md:flex-col gap-5'>
+            <div className='w-full min-h-screen flex flex-row lg:flex-col gap-5'>
                 <div className='md:w-full w-[18px] flex flex-col justify-evenly pt-20 items-center gap-5'>
                     {projects?.map((project, index) => {
                         const isEven = index % 2 == 0;
@@ -481,8 +481,8 @@ const Ajay = () => {
                                 videoRef.current.currentTime = 0 // video reset
                             }}
                         >
-                        <div className='md:w-140 md:h-80 w-80 h-45 ml-90 md:ml-0 rounded-2xl bg-white/20'>
-                        <div className='md:w-140 md:h-80 w-80 h-45 ml-0 rounded-2xl bg-black translate-y-4 -translate-x-4 overflow-hidden relative group '>
+                        <div className='lg:w-140 lg:h-80 max-[409px]:w-80 max-[409px]:h-45 min-[410px]:w-90 min-[410px]:ml-105 max-[409px]:ml-90 md:ml-0 rounded-2xl bg-white/20'>
+                        <div className='lg:w-140 lg:h-80 max-[409px]:w-80 max-[409px]:h-45 min-[410px]:w-90 ml-0 rounded-2xl bg-black translate-y-4 -translate-x-4 overflow-hidden relative group '>
                           <video 
                             ref={videoRef}
                             src={project.video}
@@ -588,7 +588,7 @@ const Ajay = () => {
                         />
                     </div>
                     <div className='md:w-150 mt-10 md:text-3xl h-20 text-center'>
-                        <p className='text-white wfull text-[10px] md:text-md'>Great code solves real problems. Great teams build with trust.
+                        <p className='text-white w-full max-[409px]:text-[10px] lg:text-md'>Great code solves real problems. Great teams build with trust.
 With experience, you learn — it’s less about the tools and more about the mindset.
 Have something worth building? Let’s connect.</p>
                     </div>
@@ -601,21 +601,21 @@ Have something worth building? Let’s connect.</p>
                       <FaDownload /> Download CV
                     </a>
                 </div>
-                <div className='md:w-180 w-100 flex md:flex-col flex-row jusitfy-center items-center'>
+                <div className='lg:w-180 w-100 flex lg:flex-col flex-row jusitfy-center items-center'>
                     <form 
                         ref={formRef}
                         onSubmit={sendEmail}
-                        className='md:w-160 md:h-140 w-95 h-141 ml-3 bg-white/10 rounded-3xl flex flex-col'>
+                        className='lg:w-160 lg:h-140 min-[410px]:w-95 min-[410px]:h-141 max-[409px]:w-85 ml-3 max-[409px]:ml-7 bg-white/10 rounded-3xl flex flex-col'>
                         <h1 className='text-white text-3xl text-center mt-10 font-bold'>Get In Touch</h1>
                         <div className='w-full h-18 mt-10 flex flex-row justify-evenly items-center'>
-                            <div className='md:w-80 w-47 md:h-18 flex flex-col justify-center items-center gap-3'>
+                            <div className='md:w-80 w-47 md:h-18 max-[409px]:ml-2 flex flex-col justify-center items-center gap-3'>
                                 <p className='text-white text-md font-bold md:mr-50 mr-25'>Name</p>
                                 <input 
                                     type='text'
                                     name='from_name'
                                     placeholder='Your name'
                                     required
-                                    className='md:w-70 w-45 h-8 ml-2 rounded-2xl text-[12px] pl-5 placeholder:text-gray-300 bg-white/30 '
+                                    className='lg:w-70 min-[410px]:w-45 h-8 min-[410px]:ml-2 max=[409px]:w-40 rounded-2xl text-[12px] pl-5 placeholder:text-gray-300 bg-white/30 '
                                 />
                             </div>
                            <div className='w-80 h-18 flex flex-col justify-center items-center gap-3'>
@@ -625,7 +625,7 @@ Have something worth building? Let’s connect.</p>
                                     name='user_email'
                                     placeholder='Your Email'
                                     required
-                                    className='md:w-70 w-45 h-8 rounded-2xl text-[12px] pl-5 placeholder:text-gray-300 bg-white/30 '
+                                    className='lg:w-70 min-[410px]:w-45 h-8 min-[410px]:ml-2 max=[409px]:w-40 rounded-2xl text-[12px] pl-5 placeholder:text-gray-300 bg-white/30 '
                                 />
                             </div>
                         </div>
@@ -635,23 +635,23 @@ Have something worth building? Let’s connect.</p>
                           </div>
                           <div>
                             <textarea 
-                              className='md:w-145 w-90 h-60 rounded-xl bg-white/10 p-3 text-white resize-none'
+                              className='md:w-145 min-[410px]:w-90 max-[409px]:w-80 h-60 rounded-xl bg-white/10 p-3 text-white resize-none'
                               placeholder='Enter your message'
                               name='message'
                               required
                             />
                           </div>
                         </div>
-                        <button type='submit' className='w-50 h-8 bg-white rounded-2xl mt-4 md:ml-100 ml-40 cursor-pointer text-black'>
+                        <button type='submit' className='w-50 h-8 bg-white rounded-2xl mt-4 md:ml-100 ml-40 max-[409px]:ml-30 max-[409px]:mb-5 cursor-pointer text-black'>
                             Send message
                         </button>
                     </form>
                 </div>
             </div>
-            <div className='md:w-full w-[410px] h-30 mt-5 rounded-t-3xl bg-white/10 flex md:flex-row felx-col justify-center items-center'>
+            <div className='md:w-full max-[409px]:w-90 w-[410px] h-30 mt-5 rounded-t-3xl bg-white/10 flex md:flex-row felx-col justify-center items-center'>
                 <div className='md:w-full w-[410px] h-15 text-white md:text-2xl text-sm ml-10 mt-3 flex md:flex-row flex-col md:justify-center justify-center items-center md:gap-10 gap-3'>
                     <p className='md:mr-50 mr-5 text-center'>Ajay Kumar</p>
-                    <div className='md:w-120 md:h-10 w-100 mr-10 h-15 rounded-3xl hover:bg-black/30 text-[15px] bg-black/10 text-white flex flex-row justify-evenly items-center gap-5'>
+                    <div className='md:w-120 md:h-10 w-100 max-[409px]:w-85 mr-10 h-15 rounded-3xl hover:bg-black/30 text-[15px] bg-black/10 text-white flex flex-row justify-evenly items-center gap-5'>
                         <p className='cursor-pointer' onClick={ScrollToHome}>Home</p>
                         <p  className='cursor-pointer' onClick={scrollToAbout}>About</p>
                         <p  className='cursor-pointer' onClick={scrollToSkills}>Skills</p>

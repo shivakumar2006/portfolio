@@ -27,8 +27,8 @@ const Landing = () => {
       >
         {/* Navbar */}
         <div className='w-full border-2 flex flex-row justify-between items-center pt-5 md:pl-10 gap-10'>
-          <p className='md:text-2xl text-sm font-bold md:ml-0.5 text-white flex flex-row justify-center items-center cursor-pointer transition-transform duration-500 hover:scale-110'>
-            ViSi<FaEarthAmericas className='font-bold' />nAries
+          <p className='lg:text-2xl text-sm font-bold max-[410px]:ml-0 min-[410px]:ml-5 md:ml-0.5 xs:ml-5 text-white flex flex-row justify-center items-center cursor-pointer transition-transform duration-500 hover:scale-110'>
+            ViSi<FaEarthAmericas className='font-bold'/>nAries
           </p>
 
           <div 

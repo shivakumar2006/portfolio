@@ -9,14 +9,30 @@ export default defineConfig({
       fontFamily: {
         mooli: ['Mooli', 'sans-serif'],
       },
-      screen: {
-        'xs': '410px', // for 410px custom breakpoint
-      }
+      // screens: {
+      //   'xs': '410px', // for 410px custom breakpoint
+      // }
     },
   },
   plugins: [
     react(),
-    tailwindcss(),
+    tailwindcss(
+      {
+      config: {
+        theme: {
+          extend: {
+            fontFamily: {
+              mooli: ['Mooli', 'sans-serif'],
+            },
+            screens: {
+              xs: '410px',
+            },
+          },
+        },
+        plugins: [],
+      },
+    },
+    ),
   ],
   server: {
     host: '0.0.0.0',  // ✅ important for LAN access
