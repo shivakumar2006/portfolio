@@ -355,7 +355,7 @@ const Ajay = () => {
         <div className='w-120 md:ml-20 mr-2 ml-5 h-170 text-white flex flex-col justify-center items-center'>
             <p className='font-bold text-xl mr-50'>Senior Software Engineer</p>
             <p className='font-extralight text-[14px] mr-65'>Victoria's Secret - Full-time</p>
-            <p className='font-extralight text-gray-300 text-[14px] mr-59'>Nov 2021 - Present 3 yrs 9 mos</p>
+            <p className='font-extralight text-gray-300 text-[14px] mr-59'>Nov 2021 - Present 3 yrs 9 mos +</p>
             <p className='font-extralight text-gray-300 text-[14px] mr-64'>Bengaluru, Karnataka, India</p>
 
             <p className='font-bold text-xl mt-15 mr-55'>MTS-2 System Engineer</p>
@@ -398,7 +398,7 @@ const Ajay = () => {
             <div className='w-full text-white text-6xl font-extrabold flex justify-center items-center pt-20'>
                     My Skills
             </div>
-            <div className='md:w-screen min-h-screen mt-20 md:ml-[-30px] ml-[-100px] flex flex-wrap justify-center items-center overflow-visible'>
+            <div className='md:w-screen min-h-screen mt-20 lg:pl-25 ml-[-100px] flex flex-wrap justify-center items-center overflow-visible'>
                 {skills?.map((item, index) => (
                 <motion.div 
                   key={index}
