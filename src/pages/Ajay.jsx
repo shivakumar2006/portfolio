@@ -364,7 +364,7 @@ const Ajay = () => {
             <p className='font-extralight text-gray-300 text-[14px] mr-67'>Chennai, Tamil Nadu, India</p>
 
             <p className='font-bold text-xl mt-15 mr-78'>Tech Mahindra</p>
-            <p className='font-extralight text-[14px] mr-78'>Full-time e yrs 1 mos</p>
+            <p className='font-extralight text-[14px] mr-78'>Full-time 3 yrs 1 mos</p>
             <p className='font-bold text-xl mt-6 mr-70'>Software Engineer</p>
             <p className='font-extralight text-gray-300 text-[14px] mr-60'>Aug 2017 - Aug 2019  2 yrs 1 mos</p>
             <p className='font-extralight text-gray-300 text-[14px] mr-69'>Chennai, Tamil Nadu, India</p>
