@@ -89,6 +89,7 @@ const Shiva = () => {
         {name: "SupaBase", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-green-600 shadow-[0_0_60px_rgba(0,128,0,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
         {name: "FramerMotion", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg", className:'w-30 h-32 border-2 bg-white/30 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
         {name: "Netlify", pic:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
+        {name: "Docker", pic: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", className:'w-30 h-32 border-2 bg-black/20 border-blue-300 shadow-[0_0_60px_rgba(59,130,246,0.5)] rounded-2xl flex flex-col justify-center items-center ml-25 mt-5'},
     ]
 
     const projects = [
@@ -482,7 +483,7 @@ const Shiva = () => {
                                     name='from_name'
                                     placeholder='Your name'
                                     required
-                                    className='lg:w-70 min-[410px]:w-45 h-8 min-[410px]:ml-2 max=[409px]:w-40 rounded-2xl text-[12px] pl-5 placeholder:text-gray-300 bg-white/30 '
+                                    className='lg:w-70 min-[410px]:w-45 h-8 min-[410px]:ml-2 max=[409px]:w-40 rounded-2xl text-[12px] text-white pl-5 placeholder:text-gray-300 bg-white/30 '
                                 />
                             </div>
                            <div className='w-80 h-18 flex flex-col justify-center items-center gap-3'>
@@ -492,7 +493,7 @@ const Shiva = () => {
                                     name='user_email'
                                     placeholder='Your Email'
                                     required
-                                    className='lg:w-70 min-[410px]:w-45 h-8 min-[410px]:ml-2 max=[409px]:w-40 rounded-2xl text-[12px] pl-5 placeholder:text-gray-300 bg-white/30 '
+                                    className='lg:w-70 min-[410px]:w-45 h-8 min-[410px]:ml-2 max=[409px]:w-40 rounded-2xl text-white text-[12px] pl-5 placeholder:text-gray-300 bg-white/30 '
                                 />
                             </div>
                         </div>
